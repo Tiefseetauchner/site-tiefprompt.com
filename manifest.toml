@@ -7,7 +7,12 @@ processors = []
 
 [[custom_processors.preprocessors]]
 cli_args = ["-t", "html5"]
-name = "HTML Multi File"
+name = "HTML"
+
+[[custom_processors.preprocessors]]
+cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
+extension_filter = "md"
+name = "HTML from Markdown"
 
 [[custom_processors.preprocessors]]
 cli = "cat"
@@ -42,4 +47,4 @@ format = "Json"
 
 [templates.preprocessors]
 output_extension = "html"
-preprocessors = ["HTML Direct", "HTML Multi File"]
+preprocessors = ["HTML Direct", "HTML from Markdown", "HTML"]

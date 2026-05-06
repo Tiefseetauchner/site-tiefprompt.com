@@ -20,7 +20,7 @@
 
       @font-face {
         font-family: Exo;
-        src: url("/fonts/Exo-VariableFont_wght.ttf");
+        src: url("/fonts/Exo-Italic-VariableFont_wght.ttf");
         font-style: italic;
       }
 
@@ -29,11 +29,17 @@
       }
 
       h1,h2,h3,h4,h5,h6 {
-        font-family: Audiowide;
+        font-family: Exo;
       }
       
       * {
         font-family: Exo;
+      }
+      
+      .feature-card:hover {
+        cursor: pointer;
+        background: color-mix(in srgb, var(--bs-teal) 40%, white 60%);
+        transition: all ease-in-out 200ms;
       }
     </style>
   </head>
