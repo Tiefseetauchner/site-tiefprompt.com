@@ -1,0 +1,45 @@
+smart_clean = true
+smart_clean_threshold = 3
+version = 6
+
+[custom_processors]
+processors = []
+
+[[custom_processors.preprocessors]]
+cli_args = ["-t", "html5"]
+name = "HTML Multi File"
+
+[[custom_processors.preprocessors]]
+cli = "cat"
+cli_args = []
+extension_filter = "html"
+name = "HTML Direct"
+
+[[injections]]
+files = ["custom-tail.html"]
+name = "HTML Tail Injection"
+
+[[injections]]
+files = ["custom-head.html"]
+name = "HTML Head Injection"
+
+[[markdown_projects]]
+name = "Markdown"
+output = "."
+path = "Markdown"
+
+[[templates]]
+footer_injections = ["HTML Tail Injection"]
+header_injections = ["HTML Head Injection"]
+multi_file_output = true
+name = "HTML"
+output = "web"
+template_type = "CustomPreprocessors"
+
+[templates.meta_gen]
+feature = "NavOnly"
+format = "Json"
+
+[templates.preprocessors]
+output_extension = "html"
+preprocessors = ["HTML Direct", "HTML Multi File"]
