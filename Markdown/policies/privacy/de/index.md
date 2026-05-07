@@ -156,7 +156,7 @@ Bei der Validierung von In-App-Kauf-Belegen im Freemium-Build werden die kryptog
 
 Der Entwickler kann diese Erklärung aktualisieren, um Änderungen an der Anwendung, am anwendbaren Recht oder am Geschäftsbetrieb Rechnung zu tragen. Bei wesentlichen Änderungen — insbesondere wenn optionale serverbasierte Funktionen (etwa Synchronisation oder Fernsteuerung) eingeführt werden — wird Ihnen die aktualisierte Erklärung in der App vorgelegt; vor der Anwendung jeder neuen Verarbeitungstätigkeit auf Sie wird Ihre ausdrückliche Zustimmung eingeholt. Verweigern Sie die Zustimmung, so steht Ihnen die neue Funktion schlicht nicht zur Verfügung; die bestehende offline-Funktionalität von TiefPrompt bleibt wie in dieser Erklärung beschrieben weiterhin uneingeschränkt nutzbar.
 
-Nicht-wesentliche Aktualisierungen (etwa Klarstellungen, Korrekturen oder Änderungen der Kontaktdaten) werden durch Aktualisierung des Datums und der Versionsnummer am Beginn dieses Dokuments kenntlich gemacht. Die maßgebliche aktuelle Fassung ist stets jene, die unter [Link zur autoritativen Fassung — GitHub oder Website] veröffentlicht ist.
+Nicht-wesentliche Aktualisierungen (etwa Klarstellungen, Korrekturen oder Änderungen der Kontaktdaten) werden durch Aktualisierung des Datums und der Versionsnummer am Beginn dieses Dokuments kenntlich gemacht. Die maßgebliche aktuelle Fassung ist stets jene, die unter [https://tiefprompt.com/policies/privacy/de](https://tiefprompt.com/policies/privacy/de) veröffentlicht ist.
 
 ## 15. Anwendbares Recht und Gerichtsstand
 

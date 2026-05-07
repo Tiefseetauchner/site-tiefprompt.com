@@ -156,7 +156,7 @@ When in-app purchase receipts are validated in the Freemium build, the cryptogra
 
 The developer may update this policy to reflect changes in the application, in applicable law, or in business operations. When material changes are made — in particular, if and when optional server-based features (such as synchronization or remote control) are introduced — you will be presented with the updated policy in-app and asked to provide explicit consent before any new processing activity applies to you. If you do not consent, the new feature will simply not be available to you, and the existing offline functionality of TiefPrompt will continue to work as described in this policy.
 
-Non-material updates (such as clarifications, corrections, or contact-detail changes) will be reflected by updating the effective date and version at the top of this document. The authoritative current version is always the one published at [link to authoritative policy location — GitHub or website].
+Non-material updates (such as clarifications, corrections, or contact-detail changes) will be reflected by updating the effective date and version at the top of this document. The authoritative current version is always the one published at [https://tiefprompt.com/policies/privacy/en](https://tiefprompt.com/policies/privacy/en).
 
 ## 15. Governing law and jurisdiction
 
