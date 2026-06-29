@@ -1,0 +1,45 @@
+og_pages:
+  "index.html":
+    title: "TiefPrompt || Free Open Source Teleprompter"
+    description: "A clean, open source teleprompter for Android and iOS. Scripts, fonts, countdown timer and more."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "features/font-choice/index.html":
+    title: "Font Choice || TiefPrompt"
+    description: "Pick the typeface that reads best for you. Serif, sans-serif, slab, and OpenDyslexia."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "features/script-storage/index.html":
+    title: "Save & Load Scripts || TiefPrompt"
+    description: "Your scripts stay on your device. Open them, edit them, go."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "features/countdown-timer/index.html":
+    title: "Countdown Timer || TiefPrompt"
+    description: "Never need to make a run for it. Start the prompter on your own time with a built-in countdown timer."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "features/markdown/index.html":
+    title: "Markdown Formatting || TiefPrompt"
+    description: "Structure your scripts with familiar markdown syntax."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "features/keybindings/index.html":
+    title: "Custom Keybindings || TiefPrompt"
+    description: "Map controls to whatever works for your setup."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "features/settings-storage/index.html":
+    title: "Save & Restore Settings || TiefPrompt"
+    description: "Your preferences, backed up and portable."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "support/index.html":
+    title: "Support || TiefPrompt"
+    description: "Get help with TiefPrompt."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "imprint/index.html":
+    title: "Imprint || TiefPrompt"
+    description: "Imprint and legal information for TiefPrompt."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "policies/privacy/en/index.html":
+    title: "Privacy Policy || TiefPrompt"
+    description: "Privacy policy for TiefPrompt."
+    image: "https://tiefprompt.com/images/home_screen.png"
+  "policies/privacy/de/index.html":
+    title: "Datenschutzerklärung || TiefPrompt"
+    description: "Datenschutzerklärung für TiefPrompt."
+    image: "https://tiefprompt.com/images/home_screen.png"

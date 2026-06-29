@@ -1,0 +1,5 @@
+<meta property="og:title" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].title)) or 'TiefPrompt' }}">
+<meta property="og:description" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].description)) or 'A clean, open source teleprompter for Android and iOS. Get the full app for free.' }}">
+<meta property="og:image" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].image)) or 'https://tiefprompt.com/images/home_screen.png' }}">
+<meta property="og:type" content="website">
+<meta name="description" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].description)) or 'A clean, open source teleprompter for Android and iOS. Get the full app for free.' }}">

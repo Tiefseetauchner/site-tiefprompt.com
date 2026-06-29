@@ -20,13 +20,23 @@ cli_args = []
 extension_filter = "html"
 name = "HTML Direct"
 
+[[custom_processors.preprocessors]]
+cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
+extension_filter = "md"
+name = "HTML from Markdown with OG"
+
+[[custom_processors.preprocessors]]
+cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5", "--metadata-file", "og-meta.yaml"]
+extension_filter = "mdl"
+name = "MDL Headers"
+
 [[injections]]
 files = ["custom-tail.html"]
 name = "HTML Tail Injection"
 
 [[injections]]
-files = ["custom-head.html"]
-name = "HTML Head Injection"
+files = ["custom-head-1.html", "custom-head-headers.mdl", "custom-head-2.html"]
+name = "HTML Head Injection Split"
 
 [[markdown_projects]]
 name = "Markdown"
@@ -34,17 +44,18 @@ output = "."
 path = "Markdown"
 
 [[templates]]
+filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua"]
 footer_injections = ["HTML Tail Injection"]
-header_injections = ["HTML Head Injection"]
+header_injections = ["HTML Head Injection Split"]
 multi_file_output = true
 name = "HTML"
 output = "web"
 template_type = "CustomPreprocessors"
 
 [templates.meta_gen]
-feature = "NavOnly"
+feature = "Full"
 format = "Json"
 
 [templates.preprocessors]
 output_extension = "html"
-preprocessors = ["HTML Direct", "HTML from Markdown", "HTML"]
+preprocessors = ["HTML Direct", "HTML from Markdown with OG", "HTML", "MDL Headers"]
