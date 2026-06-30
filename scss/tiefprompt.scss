@@ -1,0 +1,64 @@
+$teal: #1fb6b6;
+$cyan: #2dd4d4;
+$coral: #ff7a59;
+
+$primary: $teal;
+
+$body-bg: #f3f7f8;
+$body-color: #11242e;
+
+$body-bg-dark: #0a1822;
+$body-color-dark: #d6e4e8;
+$body-secondary-color-dark: #7c97a3;
+$body-secondary-bg-dark: #10222e;
+$body-tertiary-bg-dark: #0d1d27;
+$emphasis-color-dark: #ffffff;
+$border-color-dark: #1d3543;
+$link-color-dark: $cyan;
+
+
+
+@import "bootstrap/scss/bootstrap";
+
+#waveBg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#waveBg .wave-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: background-position;
+}
+
+.feature-card {
+  color: var(--bs-body-color);
+  text-decoration: none;
+}
+
+.feature-card:hover {
+  cursor: pointer;
+  background: color-mix(in srgb, var(--bs-primary) 18%, var(--bs-body-bg));
+  transition: all ease-in-out 200ms;
+}
+
+#themeToggle {
+  line-height: 0;
+}
+
+.theme-icon {
+  display: none;
+}
+
+[data-bs-theme="dark"] .theme-icon-light {
+  display: inline-block;
+}
+
+[data-bs-theme="light"] .theme-icon-dark {
+  display: inline-block;
+}

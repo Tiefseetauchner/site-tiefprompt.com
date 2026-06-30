@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build:css": "sass --no-source-map --quiet-deps --style=compressed --load-path=node_modules scss/tiefprompt.scss static_resources/css/bootstrap.css",
+    "build:js": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js static_resources/js/bootstrap.bundle.min.js && cp node_modules/swiper/swiper-bundle.min.js static_resources/js/swiper-bundle.min.js",
+    "build:vendor-css": "cp node_modules/swiper/swiper-bundle.min.css static_resources/css/swiper-bundle.min.css",
+    "build": "bun run build:css && bun run build:vendor-css && bun run build:js",
+    "watch:css": "bun run build:css --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "5.3.3",
+    "sass": "^1.101.0",
+    "swiper": "11"
+  }
+}

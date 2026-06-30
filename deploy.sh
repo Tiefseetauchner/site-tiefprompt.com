@@ -91,6 +91,11 @@ if [ ! -d "$SOURCE_DIR" ]; then
   error_echo "Source directory '$SOURCE_DIR' does not exist." 1
 fi
 
+if [ -z "$SKIP_COMPILE" ]; then
+  normal_echo "${CYAN}Building Bootstrap CSS/JS...${RESET}"
+  bun run build
+fi
+
 if [ -d "$STATIC_DIR" ]; then
   normal_echo "${CYAN}Copying static resources from '$STATIC_DIR' to '$SOURCE_DIR'...${RESET}"
   cp -a "${STATIC_DIR%/}/." "$SOURCE_DIR"
