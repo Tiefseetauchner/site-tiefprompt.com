@@ -1,3 +1,9 @@
+---
+title: Datenschutzerklärung
+nav_label: Deutsch
+description: Datenschutzerklärung für TiefPrompt.
+---
+
 # Datenschutzerklärung TiefPrompt
 
 **Stand:** 5. Mai 2026

@@ -1,3 +1,8 @@
+---
+title: Support
+description: Get help with TiefPrompt.
+---
+
 # Support
 
 Do you need support? Have a feature request? A bug? Well, contact us!

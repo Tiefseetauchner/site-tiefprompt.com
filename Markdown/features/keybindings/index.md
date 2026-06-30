@@ -1,3 +1,9 @@
+---
+title: Keybindings
+og_title: Custom Keybindings
+description: Map controls to whatever works for your setup.
+---
+
 # Custom Keybindings
 
 `P`{.badge .text-bg-warning .prem-font} *This feature requires a one-time purchase on Google Play or the App Store. It is fully free on F-Droid and self-compiled builds.*

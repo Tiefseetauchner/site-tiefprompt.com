@@ -1,3 +1,9 @@
+---
+title: Markdown
+og_title: Markdown Formatting
+description: Structure your scripts with familiar markdown syntax.
+---
+
 # Markdown Formatting
 
 `P`{.badge .text-bg-warning .prem-font} *This feature requires a one-time purchase on Google Play or the App Store. It is fully free on F-Droid and self-compiled builds.*

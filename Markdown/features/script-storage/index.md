@@ -1,3 +1,9 @@
+---
+title: Script Storage
+og_title: Save & Load Scripts
+description: Your scripts stay on your device. Open them, edit them, go.
+---
+
 # Save & Load Scripts
 
 You write a script. You close the app. It's still there. That's it, that's the feature.

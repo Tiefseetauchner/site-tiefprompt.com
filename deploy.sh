@@ -56,6 +56,7 @@ ${GREEN}-s dir      ${RESET}Source directory to upload.
 ${GREEN}-S dir      ${RESET}Static resources directory copied into the source dir before deploy.
             Default: static_resources/
             (i) Can be set via environment variable 'STATIC_DIR'
+${GREEN}-k          ${RESET}Skip compilation (tiefdownconverter) for this run.
 ${GREEN}-q          ${RESET}Make script quiet.
 ${GREEN}-v          ${RESET}Make script verbose.
 ${GREEN}-h          ${RESET}Show this help.
@@ -65,14 +66,16 @@ EOF
 DEPLOY_CONFIG="${DEPLOY_CONFIG:-deployconfig.env}"
 SOURCE_DIR="${SOURCE_DIR:-web/}"
 STATIC_DIR="${STATIC_DIR:-static_resources/}"
+unset -v SKIP_COMPILE
 unset -v QUIET
 unset -v VERBOSE
 
-while getopts "c:s:S:qvh" opt; do
+while getopts "c:s:S:kqvh" opt; do
   case $opt in
     c) DEPLOY_CONFIG=$OPTARG ;;
     s) SOURCE_DIR=$OPTARG ;;
     S) STATIC_DIR=$OPTARG ;;
+    k) SKIP_COMPILE=YES ;;
     q) QUIET=YES ;;
     v) VERBOSE=YES ;;
     h) info; exit 0 ;;
@@ -98,6 +101,10 @@ source "$DEPLOY_CONFIG"
 
 if [ -z "$SERVER_HOST" ] || [ -z "$REMOTE_PATH" ]; then
   error_echo "Config '$DEPLOY_CONFIG' must define SERVER_HOST and REMOTE_PATH." 1
+fi
+
+if [ -z "$SKIP_COMPILE" ]; then
+  tiefdownconverter convert
 fi
 
 rsync_args=(

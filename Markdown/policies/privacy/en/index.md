@@ -1,3 +1,9 @@
+---
+title: Privacy Policy
+nav_label: English
+description: Privacy policy for TiefPrompt.
+---
+
 # TiefPrompt Privacy Policy
 
 **Effective date:** 5 May 2026

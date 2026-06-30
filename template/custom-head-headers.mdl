@@ -1,5 +1,6 @@
-<meta property="og:title" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].title)) or 'TiefPrompt' }}">
-<meta property="og:description" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].description)) or 'A clean, open source teleprompter for Android and iOS. Get the full app for free.' }}">
-<meta property="og:image" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].image)) or 'https://tiefprompt.com/images/home_screen.png' }}">
-<meta property="og:type" content="website">
-<meta name="description" content="{{ lua: (nav.current and meta.og_pages and meta.og_pages[nav.current.path] and pandoc.utils.stringify(meta.og_pages[nav.current.path].description)) or 'A clean, open source teleprompter for Android and iOS. Get the full app for free.' }}">
+<meta property="og:title" content="{{ lua: local c = (nav and nav.current) or {}; local fm = c.front_matter or {}; local base = fm.og_title or (c.path ~= 'index.html' and c.title); return (base and (tostring(base) .. ' || TiefPrompt')) or 'TiefPrompt || Free Open Source Teleprompter' }}"/>
+<meta property="og:description" content="{{ lua: local fm = (nav and nav.current and nav.current.front_matter) or {}; return fm.description or 'A clean, open source teleprompter for Android and iOS. Scripts, fonts, countdown timer and more.' }}"/>
+<meta property="og:image" content="{{ lua: local fm = (nav and nav.current and nav.current.front_matter) or {}; return fm.og_image or 'https://tiefprompt.com/images/home_screen.png' }}"/>
+<meta property="og:type" content="website"/>
+<meta name="description" content="{{ lua: local fm = (nav and nav.current and nav.current.front_matter) or {}; return fm.description or 'A clean, open source teleprompter for Android and iOS. Scripts, fonts, countdown timer and more.' }}"/>
+<title>{{ lua: local c = (nav and nav.current) or {}; local fm = c.front_matter or {}; local base = fm.og_title or (c.path ~= [[index.html]] and c.title); return (base and (tostring(base) .. [[ || TiefPrompt]])) or [[TiefPrompt || Free Open Source Teleprompter]] }}</title>

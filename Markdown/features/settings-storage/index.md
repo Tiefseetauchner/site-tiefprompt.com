@@ -1,3 +1,9 @@
+---
+title: Settings Storage
+og_title: Save & Restore Settings
+description: Your preferences, backed up and portable.
+---
+
 # Save & Restore Settings
 
 `P`{.badge .text-bg-warning .prem-font} *This feature requires a one-time purchase on Google Play or the App Store. It is fully free on F-Droid and self-compiled builds.*

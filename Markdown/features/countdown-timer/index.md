@@ -1,3 +1,8 @@
+---
+title: Countdown Timer
+description: Never need to make a run for it. Start the prompter on your own time with a built-in countdown timer.
+---
+
 # Countdown Timer
 
 The countdown timer is a critical feature when working alone or without a remote. It allows you to start your script at your pace, when you're ready, and when you're back in frame.

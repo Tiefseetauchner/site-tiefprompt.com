@@ -1,3 +1,8 @@
+---
+title: Font Choice
+description: Pick the typeface that reads best for you. Serif, sans-serif, slab, and OpenDyslexia.
+---
+
 # Font Choice
 
 Some people find serif fonts hard to read. Others find their preferences skewing towards sans-serif. Others yet again use fonts designed for dyslexia.

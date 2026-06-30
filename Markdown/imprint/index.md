@@ -1,3 +1,8 @@
+---
+title: Imprint
+description: Imprint and legal information for TiefPrompt.
+---
+
 Lena Tauchner, Einzelunternehmerin\
 Filmproduktion
 
