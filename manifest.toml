@@ -23,12 +23,17 @@ name = "HTML Direct"
 [[custom_processors.preprocessors]]
 cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
 extension_filter = "md"
-name = "HTML from Markdown with OG"
+name = "HTML from Markdown"
 
 [[custom_processors.preprocessors]]
 cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
 extension_filter = "mdl"
 name = "MDL Headers"
+
+[[custom_processors.preprocessors]]
+cli_args = ["-f", "markdown", "-t", "html5"]
+extension_filter = "xmltemplate"
+name = "Sitemap"
 
 [[injections]]
 files = ["custom-tail.html"]
@@ -39,9 +44,38 @@ files = ["custom-head-1.html", "custom-head-headers.mdl", "custom-head-2.html", 
 name = "HTML Head Injection Split"
 
 [[markdown_projects]]
+default_profile = "Website"
 name = "Markdown"
 output = "."
 path = "Markdown"
+
+[[markdown_projects]]
+default_profile = "Sitemap"
+name = "Sitemap"
+output = "."
+path = "Sitemap"
+
+[[profiles]]
+name = "Website"
+templates = ["HTML"]
+
+[[profiles]]
+name = "Sitemap"
+templates = ["Sitemap"]
+
+[[templates]]
+filters = ["luafilters/sitemapfilter/sitemap_filter.lua"]
+multi_file_output = true
+name = "Sitemap"
+output = "web"
+template_type = "CustomPreprocessors"
+
+[templates.meta_gen]
+feature = "Full"
+
+[templates.preprocessors]
+output_extension = "xml"
+preprocessors = ["Sitemap"]
 
 [[templates]]
 filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua"]
@@ -58,4 +92,4 @@ format = "Json"
 
 [templates.preprocessors]
 output_extension = "html"
-preprocessors = ["HTML Direct", "HTML from Markdown with OG", "HTML", "MDL Headers"]
+preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers"]

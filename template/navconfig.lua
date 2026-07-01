@@ -21,4 +21,7 @@ return {
 
   -- Imprint is reachable from the footer only
   { pattern = '^imprint/', hidden = true },
+
+  -- 404 shouldn't be in the nav
+  { pattern = '^404%.html$', hidden = true },
 }

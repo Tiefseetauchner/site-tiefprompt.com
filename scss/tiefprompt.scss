@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $teal: #1fb6b6;
 $cyan: #2dd4d4;
 $coral: #ff7a59;
@@ -14,9 +16,8 @@ $body-secondary-bg-dark: #10222e;
 $body-tertiary-bg-dark: #0d1d27;
 $emphasis-color-dark: #ffffff;
 $border-color-dark: #1d3543;
-$link-color-dark: $cyan;
-
-
+$link-color: color.mix(black, $cyan, 50%);
+$link-color-dark: color.mix(white, $cyan, 50%);
 
 @import "bootstrap/scss/bootstrap";
 
