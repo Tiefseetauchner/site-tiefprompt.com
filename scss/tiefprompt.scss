@@ -8,7 +8,9 @@ $primary: $teal;
 
 $body-bg: #f3f7f8;
 $body-color: #11242e;
+$link-color: color.mix(black, $coral, 30%);
 
+// Dark theme colors
 $body-bg-dark: #0a1822;
 $body-color-dark: #d6e4e8;
 $body-secondary-color-dark: #7c97a3;
@@ -16,10 +18,66 @@ $body-secondary-bg-dark: #10222e;
 $body-tertiary-bg-dark: #0d1d27;
 $emphasis-color-dark: #ffffff;
 $border-color-dark: #1d3543;
-$link-color: color.mix(black, $cyan, 50%);
-$link-color-dark: color.mix(white, $cyan, 50%);
+$link-color-dark: color.mix(white, $coral, 50%);
 
 @import "bootstrap/scss/bootstrap";
+
+.navbar {
+  background: transparent !important;
+  border-bottom: 0 !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar > .container {
+  background: mix($body-bg, transparent, 40%);
+  
+  [data-bs-theme="dark"] & {
+    background: mix($body-bg-dark, transparent, 40%);
+  }
+  
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 6px 24px rgba(17, 36, 46, 0.14);
+  transition:
+    max-width 350ms ease,
+    border-radius 350ms ease,
+    box-shadow 300ms ease-in-out;
+}
+
+// Top-of-page state: full-bleed, flush across the top, square corners, no lift.
+.navbar:not(.is-floating) > .container {
+  max-width: 100%;
+  border-radius: 0;
+  box-shadow: 0 1px 0 var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .navbar > .container {
+  box-shadow:
+    0 0 20px rgba($cyan, 0.28),
+    0 6px 24px rgba(0, 0, 0, 0.45);
+}
+
+[data-bs-theme="dark"] .navbar:not(.is-floating) > .container {
+  box-shadow: 0 1px 0 var(--bs-border-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar > .container {
+    transition: none;
+  }
+}
+
+.navbar-brand {
+  font-family: var(--brand-font, Exo), sans-serif;
+  font-weight: 600;
+}
 
 #waveBg {
   position: fixed;

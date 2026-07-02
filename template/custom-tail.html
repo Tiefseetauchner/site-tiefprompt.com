@@ -55,6 +55,26 @@
     </script>
     <script>
       (function () {
+        var nav = document.querySelector('nav.navbar');
+        if (!nav) return;
+
+        var THRESHOLD = 8;
+        var ticking = false;
+        function sync() {
+          nav.classList.toggle('is-floating', window.scrollY > THRESHOLD);
+          ticking = false;
+        }
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(sync);
+          }
+        }, { passive: true });
+        sync();
+      })();
+    </script>
+    <script>
+      (function () {
         var container = document.getElementById('waveBg');
         if (!container) return;
 

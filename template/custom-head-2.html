@@ -7,6 +7,16 @@
       })();
     </script>
 
+    <script>
+      // Pick a random TiefPrompt face for the brand on each page load. Runs in
+      // <head> so --brand-font is set before the navbar paints (no flash).
+      (function () {
+        var fonts = ['Roboto', '"Roboto Mono"', '"Roboto Slab"', '"OpenDyslexic"'];
+        var pick = fonts[Math.floor(Math.random() * fonts.length)];
+        document.documentElement.style.setProperty('--brand-font', pick);
+      })();
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swiper-bundle.min.css"/>
@@ -27,6 +37,27 @@
         font-family: Exo;
         src: url("/fonts/Exo-Italic-VariableFont_wght.ttf");
         font-style: italic;
+      }
+
+      /* TiefPrompt's own type family, cycled randomly on the brand per load. */
+      @font-face {
+        font-family: "Roboto";
+        src: url("/fonts/Roboto-VariableFont_wdth,wght.ttf");
+      }
+
+      @font-face {
+        font-family: "Roboto Mono";
+        src: url("/fonts/RobotoMono-VariableFont_wght.ttf");
+      }
+
+      @font-face {
+        font-family: "Roboto Slab";
+        src: url("/fonts/RobotoSlab-VariableFont_wght.ttf");
+      }
+
+      @font-face {
+        font-family: "OpenDyslexic";
+        src: url("/fonts/OpenDyslexic-Regular.otf");
       }
 
       .prem-font {
