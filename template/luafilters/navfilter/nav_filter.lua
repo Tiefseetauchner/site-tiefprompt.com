@@ -72,6 +72,22 @@ local function render_navbar()
   -- no navbar-dark/navbar-light is needed. The toggle button swaps between the
   -- abyss (dark) and the shallows (light); see custom-tail.html for the wiring
   -- and tiefprompt.scss for which icon shows in which mode.
+  -- Teleprompter (fun) mode: turns the marketing site into a live demo of the
+  -- product -- the page mirrors, blows up the type, and auto-scrolls like a real
+  -- teleprompter. Wiring lives in js/fun.js, styles in scss/_fun.scss, and the
+  -- no-flash bootstrap in custom-head-2.html.
+  local fun_toggle = table.concat({
+    '<li class="nav-item d-flex align-items-center">',
+    '  <button type="button" id="funToggle" class="btn btn-link nav-link border-0 px-2"',
+    '    aria-label="Toggle teleprompter mode" aria-pressed="false" title="Teleprompter mode">',
+    '    <svg class="fun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">',
+    '      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>',
+    '      <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>',
+    '    </svg>',
+    '  </button>',
+    '</li>',
+  }, '\n')
+
   local theme_toggle = table.concat({
     '<li class="nav-item d-flex align-items-center">',
     '  <button type="button" id="themeToggle" class="btn btn-link nav-link border-0 px-2"',
@@ -98,6 +114,7 @@ local function render_navbar()
     '    <div class="collapse navbar-collapse" id="navMain">',
     '      <ul class="navbar-nav ms-auto align-items-lg-center">',
     table.concat(items, '\n'),
+    fun_toggle,
     theme_toggle,
     '      </ul>',
     '    </div>',

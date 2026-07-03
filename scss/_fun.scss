@@ -1,0 +1,190 @@
+// Teleprompter mode: the marketing site becomes a live demo of the product.
+// When on, the page mirrors (the app's mirror feature), the type blows up to
+// teleprompter size, a reading guide + margin bars appear, and js/fun.js
+// auto-scrolls the whole page. Everything is gated behind html[data-fun="on"].
+// Toggle wiring: js/fun.js. No-flash bootstrap: custom-head-2.html.
+
+$tp-guide: $cyan;
+
+html[data-fun="on"] {
+  // Teleprompter reading typography: big, airy, easy to read at a distance.
+  main {
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.9rem);
+    line-height: 1.9;
+    letter-spacing: 0.01em;
+  }
+
+  // Leave room at the bottom so the last line can scroll up to the guide.
+  footer {
+    margin-bottom: 60vh;
+  }
+
+  #waveBg {
+    display: none;
+  }
+}
+
+// The signature reflected-glass mirror. Kept as its own attribute so the
+// in-page control (and the no-flash script) can flip it independently.
+html[data-fun="on"][data-fun-mirror] {
+  main,
+  footer {
+    transform: scaleX(-1);
+  }
+}
+
+// --- Overlay chrome, injected by js/fun.js, appended to <body> so it sits
+// outside the mirrored content and stays readable/clickable. ---
+
+// Reading indicators: dimmed bars over the top and bottom of the screen that
+// frame the active line, exactly like the app's reading-indicator feature. The
+// clear band between them is where your eyes land as text scrolls through.
+.tp-reader-top,
+.tp-reader-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+  pointer-events: none;
+  background: rgba(#0a1822, 0.55);
+}
+.tp-reader-top {
+  top: 0;
+  height: 38vh;
+  border-bottom: 2px solid rgba($tp-guide, 0.7);
+  box-shadow: 0 4px 14px rgba($tp-guide, 0.35);
+}
+.tp-reader-bottom {
+  bottom: 0;
+  height: 42vh;
+  border-top: 2px solid rgba($tp-guide, 0.7);
+  box-shadow: 0 -4px 14px rgba($tp-guide, 0.35);
+}
+
+// Faint reading-margin columns, echoing the app's margin feature.
+.tp-margins {
+  position: fixed;
+  inset: 0;
+  z-index: 1490;
+  pointer-events: none;
+}
+.tp-margins::before,
+.tp-margins::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 1px dashed rgba($tp-guide, 0.35);
+}
+.tp-margins::before { left: 12vw; }
+.tp-margins::after  { right: 12vw; }
+
+// Glassy teleprompter control bar, styled like the navbar chip.
+.tp-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 1600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 2rem;
+  background: mix($body-bg, transparent, 30%);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 24px rgba(17, 36, 46, 0.22);
+
+  [data-bs-theme="dark"] & {
+    background: mix($body-bg-dark, transparent, 30%);
+    box-shadow:
+      0 0 20px rgba($cyan, 0.28),
+      0 6px 24px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.tp-controls button {
+  border: 0;
+  background: transparent;
+  color: var(--bs-body-color);
+  line-height: 0;
+  padding: 0.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.tp-controls button:hover {
+  color: var(--bs-primary);
+}
+.tp-controls button[aria-pressed="true"] {
+  color: var(--bs-primary);
+}
+
+.tp-controls input[type="range"] {
+  width: 8rem;
+  accent-color: var(--bs-primary);
+}
+
+.tp-controls .tp-speed-label {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  min-width: 3.2ch;
+  text-align: right;
+  color: var(--bs-secondary-color);
+}
+
+// Circular countdown before the scroll rolls, mirroring the app's timer: a
+// light disc with a depleting progress ring and the seconds in the middle.
+.tp-countdown {
+  position: fixed;
+  inset: 0;
+  z-index: 1700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#0a1822, 0.3);
+  pointer-events: none;
+}
+
+.tp-ring {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  filter: drop-shadow(0 8px 24px rgba(17, 36, 46, 0.35));
+}
+.tp-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); // start the arc at 12 o'clock
+}
+.tp-ring-disc {
+  fill: #f3f7f8;
+}
+.tp-ring-track {
+  fill: none;
+  stroke: rgba(17, 36, 46, 0.12);
+  stroke-width: 8;
+}
+.tp-ring-progress {
+  fill: none;
+  stroke: var(--bs-primary);
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+.tp-ring-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Exo, sans-serif;
+  font-weight: 600;
+  font-size: 3.5rem;
+  color: #11242e;
+  font-variant-numeric: tabular-nums;
+}
+
+// The nav toggle celebrates being live.
+html[data-fun="on"] #funToggle {
+  color: var(--bs-primary);
+}

@@ -8,6 +8,22 @@
     </script>
 
     <script>
+      // Apply teleprompter (fun) mode before paint so the mirrored, big-type
+      // framing never flashes in/out. See js/fun.js for the toggle + scroll.
+      (function () {
+        var f, m;
+        try {
+          f = localStorage.getItem('tp-fun');
+          m = localStorage.getItem('tp-fun-mirror');
+        } catch (e) {}
+        if (f !== 'on') return;
+        var root = document.documentElement;
+        root.setAttribute('data-fun', 'on');
+        if (m !== 'off') root.setAttribute('data-fun-mirror', '');
+      })();
+    </script>
+
+    <script>
       // Pick a random TiefPrompt face for the brand on each page load. Runs in
       // <head> so --brand-font is set before the navbar paints (no flash).
       (function () {
