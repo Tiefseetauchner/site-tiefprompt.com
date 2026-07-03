@@ -5,6 +5,16 @@
 // share the same row height + top padding, passed in as --cl-row-h/--cl-top-pad
 // (mirrored from ROW_H / TOP_PAD in changelog_filter.lua).
 
+// The companion pane (follow-releases + README summary) sticks alongside the
+// long timeline on wide screens; it just flows normally when stacked on mobile.
+@include media-breakpoint-up(md) {
+  .cl-aside {
+    position: sticky;
+    top: 5rem;
+    gap: 2em;
+  }
+}
+
 .cl-graph {
   display: flex;
   align-items: flex-start;
