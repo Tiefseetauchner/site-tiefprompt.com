@@ -18,10 +18,13 @@ return {
 
   -- Top-level support link
   { pattern = '^support/', label = 'Support', order = 30 },
-
+  
   -- Imprint is reachable from the footer only
   { pattern = '^imprint/', hidden = true },
+  
+  -- separate changelog versions are hidden from nav
+  { pattern = '^changelogs/(%d+)', hidden = true },
 
   -- 404 shouldn't be in the nav
-  { pattern = '^404%.html$', hidden = true },
+  { pattern = '^(%d+)%.html$', hidden = true },
 }

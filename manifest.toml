@@ -78,7 +78,7 @@ output_extension = "xml"
 preprocessors = ["Sitemap"]
 
 [[templates]]
-filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua"]
+filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua", "luafilters/changelogfilter/changelog_filter.lua"]
 footer_injections = ["HTML Tail Injection"]
 header_injections = ["HTML Head Injection Split"]
 multi_file_output = true

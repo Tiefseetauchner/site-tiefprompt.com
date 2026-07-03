@@ -1,0 +1,88 @@
+// Changelog timeline. The markup is emitted by changelog_filter.lua from a
+// `::: tiefchangelog` placeholder: a `.cl-graph` flex row holding an SVG rail
+// column (`.cl-rails`, the git-graph branches) and a matching `.cl-rows` list
+// of version links / milestones. The two align because the SVG and the list
+// share the same row height + top padding, passed in as --cl-row-h/--cl-top-pad
+// (mirrored from ROW_H / TOP_PAD in changelog_filter.lua).
+
+.cl-graph {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  overflow-x: auto; // narrow screens: let the graph scroll rather than break.
+}
+
+.cl-rails {
+  flex: none;
+  display: block;
+}
+
+// Rails + fork connectors. Circles get their theme-aware fill here; rail colour
+// comes in per-lane via the inline `stroke`/`fill` the filter emits.
+.cl-line {
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.cl-c-version {
+  fill: var(--bs-body-bg);
+  stroke-width: 2;
+}
+
+.cl-c-halo {
+  opacity: 0.18;
+}
+
+.cl-rows {
+  list-style: none;
+  margin: 0;
+  padding: var(--cl-top-pad, 12px) 0 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.cl-row {
+  display: flex;
+  align-items: center;
+  height: var(--cl-row-h, 40px);
+  white-space: nowrap;
+}
+
+.cl-version {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--bs-body-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--bs-primary);
+  }
+}
+
+// The little chip at a branch's newest node naming the branch.
+.cl-branch-tag {
+  margin-left: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 1rem;
+}
+
+// Milestones: a badge-like label riding the rail, matching the coral dot.
+.cl-milestone {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: color.mix(black, $coral, 20%);
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  background: rgba($coral, 0.12);
+
+  [data-bs-theme="dark"] & {
+    color: color.mix(white, $coral, 35%);
+    background: rgba($coral, 0.16);
+  }
+}
