@@ -21,6 +21,9 @@ return {
   
   -- Imprint is reachable from the footer only
   { pattern = '^imprint/', hidden = true },
+
+  -- Donate page is reachable from the footer only
+  { pattern = '^donate/', hidden = true },
   
   -- separate changelog versions are hidden from nav
   { pattern = '^changelogs/(%d+)', hidden = true },

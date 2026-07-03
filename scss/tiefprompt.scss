@@ -1,6 +1,6 @@
 @use "sass:color";
 
-$teal: #1fb6b6;
+$teal: hsl(180, 71%, 42%);
 $cyan: #2dd4d4;
 $coral: #ff7a59;
 
@@ -120,6 +120,10 @@ $link-color-dark: color.mix(white, $coral, 50%);
 
 [data-bs-theme="light"] .theme-icon-dark {
   display: inline-block;
+}
+
+.don-button {
+  width: auto;
 }
 
 @import "changelog";
