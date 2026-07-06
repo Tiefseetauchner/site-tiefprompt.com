@@ -126,5 +126,11 @@ $link-color-dark: color.mix(white, $coral, 50%);
   width: auto;
 }
 
+figcaption {
+  font-size: 0.9rem;
+  color: var(--bs-body-secondary-color);
+  margin-left: 2rem;
+}
+
 @import "changelog";
 @import "fun";

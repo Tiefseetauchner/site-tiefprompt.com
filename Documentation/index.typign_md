@@ -1,0 +1,21 @@
+---
+title: Index
+description: The documentation index to give a clean overview of available items
+groups:
+  02Usage: 
+    name: "Usage"
+    order: 20
+  03Features:
+    name: "Features"
+    order: 30
+  04Contributing:
+    name: "Contributing"
+    order: 40
+---
+
+# TiefPrompt Documentation Index
+
+Welcome to the Documentation Index of TiefPrompt. Below are all documentation pages. For the PDF documentation, visit [bundle.pdf](/docs/bundle.pdf).
+
+::: docsindex
+:::

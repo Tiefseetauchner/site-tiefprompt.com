@@ -49,11 +49,23 @@ function M.build(meta)
 
   local nodes = {}
   local ordered = {}
+  local groups = {}
   for _, m in ipairs(meta.nodes) do
     local n = normalize_node(m)
     if n.id then
       nodes[n.id] = n
       ordered[#ordered + 1] = n
+    end
+
+    -- A page's front matter may declare a `groups` map (key -> {name, order})
+    -- describing how nav_filter-derived group keys (e.g. from a rule's
+    -- pattern capture) should be displayed. Typically only an index page
+    -- sets this, but merge across all nodes in case it's split up.
+    local fm_groups = n.front_matter and n.front_matter.groups
+    if type(fm_groups) == 'table' then
+      for key, cfg in pairs(fm_groups) do
+        groups[key] = cfg
+      end
     end
   end
 
@@ -66,6 +78,7 @@ function M.build(meta)
     nodes = nodes,
     ordered = ordered,
     current = current,
+    groups = groups,
   }
 end
 
@@ -77,10 +90,12 @@ function M.get_node(nav, id)
   return nav.nodes[id]
 end
 
-local function href_from_path(path)
+local function href_from_path(path, keep_extension)
   local href = '/' .. (path or '')
   href = href:gsub('index%.html$', '')
-  href = href:gsub('%.html$', '')
+  if not keep_extension then
+    href = href:gsub('%.html$', '')
+  end
   href = href:gsub('//+', '/')
   if #href > 1 then
     href = href:gsub('/$', '')
@@ -99,19 +114,20 @@ local function apply_captures(value, caps)
 end
 
 -- Resolve a node into a nav entry using ordered rules, with front matter
--- overriding any matched rule. Returns { label, group, href, hidden, order }.
+-- overriding any matched rule. Returns { label, group, href, hidden, order,
+-- keep_extension }.
 function M.classify(node, rules)
   local entry = {
     path = node.path,
-    href = href_from_path(node.path),
     label = node.title,
     group = nil,
     hidden = false,
     order = nil,
+    keep_extension = false,
   }
 
   for _, rule in ipairs(rules or {}) do
-    if node.path and node.path:find(rule.pattern) then
+    if rule.pattern and node.path and node.path:find(rule.pattern) then
       local caps = { node.path:match(rule.pattern) }
       if rule.label then
         entry.label = apply_captures(rule.label, caps)
@@ -124,6 +140,9 @@ function M.classify(node, rules)
       end
       if rule.order ~= nil then
         entry.order = rule.order
+      end
+      if rule.keep_extension ~= nil then
+        entry.keep_extension = rule.keep_extension
       end
       break
     end
@@ -142,14 +161,44 @@ function M.classify(node, rules)
   if fm.nav_order ~= nil then
     entry.order = tonumber(fm.nav_order) or entry.order
   end
+  if fm.nav_keep_extension ~= nil then
+    entry.keep_extension = fm.nav_keep_extension == true or fm.nav_keep_extension == 'true'
+  end
+
+  entry.href = href_from_path(node.path, entry.keep_extension)
 
   return entry
 end
 
 -- Build an ordered nav tree from the node list and rules. Top-level entries
 -- and groups (collapsed dropdowns) are returned as a flat ordered list:
---   { kind = 'link',  label, href, active }
+--   { kind = 'link',  label, href, active, static }
 --   { kind = 'group', label, children = { <link>, ... } }
+--
+-- A rule with `static = true` isn't matched against any node -- it always
+-- renders as a fixed link (its own `href`/`label`/`group`/`order`), useful
+-- for pointing at content that lives outside the current project's own
+-- nodes (e.g. the main site linking into the docs project). Static links are
+-- marked `static = true` so callers know their `href` is already final and
+-- shouldn't be rewritten (e.g. with a base path prefix).
+-- A group's raw key (e.g. captured from a rule's pattern, like "02Usage")
+-- may be described by a page's front-matter `groups` map -- see M.build --
+-- giving it a display name and an explicit sort order. Falls back to using
+-- the raw key as the label and the first child's order when undescribed.
+local function new_group(nav, key, fallback_order)
+  local cfg = nav.groups and nav.groups[key]
+  if cfg then
+    return {
+      kind = 'group',
+      label = cfg.name or key,
+      children = {},
+      order = tonumber(cfg.order) or fallback_order,
+      configured_order = cfg.order ~= nil,
+    }
+  end
+  return { kind = 'group', label = key, children = {}, order = fallback_order }
+end
+
 function M.tree(nav, rules)
   local items = {}
   local group_index = {}
@@ -170,15 +219,44 @@ function M.tree(nav, rules)
       if entry.group then
         local g = group_index[entry.group]
         if not g then
-          g = { kind = 'group', label = entry.group, children = {}, order = order }
+          g = new_group(nav, entry.group, order)
           group_index[entry.group] = g
           items[#items + 1] = g
         end
-        if order < g.order then
+        if not g.configured_order and order < g.order then
           g.order = order
         end
         if link.active then
           g.active = true
+        end
+        g.children[#g.children + 1] = link
+      else
+        items[#items + 1] = link
+      end
+    end
+  end
+
+  for idx, rule in ipairs(rules or {}) do
+    if rule.static and not rule.hidden then
+      local order = rule.order or (idx + #items)
+      local link = {
+        kind = 'link',
+        label = rule.label,
+        href = rule.href,
+        active = false,
+        static = true,
+        order = order,
+      }
+
+      if rule.group then
+        local g = group_index[rule.group]
+        if not g then
+          g = new_group(nav, rule.group, order)
+          group_index[rule.group] = g
+          items[#items + 1] = g
+        end
+        if not g.configured_order and order < g.order then
+          g.order = order
         end
         g.children[#g.children + 1] = link
       else

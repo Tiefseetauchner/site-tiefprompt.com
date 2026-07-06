@@ -14,12 +14,6 @@ usage() {
   cat <<EOF
 ${YELLOW}usage: build.sh [options]${RESET}
 
-${GREEN}-s dir      ${RESET}Source directory to build into.
-            Default: web/
-            (i) Can be set via environment variable 'SOURCE_DIR'
-${GREEN}-S dir      ${RESET}Static resources directory copied into the source dir.
-            Default: static_resources/
-            (i) Can be set via environment variable 'STATIC_DIR'
 ${GREEN}-k          ${RESET}Skip compilation (bun build and tiefdownconverter).
 ${GREEN}-q          ${RESET}Make script quiet.
 ${GREEN}-v          ${RESET}Make script verbose.
@@ -29,14 +23,15 @@ EOF
 
 SOURCE_DIR="${SOURCE_DIR:-web/}"
 STATIC_DIR="${STATIC_DIR:-static_resources/}"
+DOCS_STATIC_DIR="${DOCS_STATIC_DIR:-Documentation/resources/}"
+DOCS_TARGET_DIR="${DOCS_TARGET_DIR:-$SOURCE_DIR/docs/web/}"
+DOCS_STATIC_TARGET_DIR="${DOCS_STATIC_TARGET_DIR:-$DOCS_TARGET_DIR/resources/}"
 unset -v SKIP_COMPILE
 unset -v QUIET
 unset -v VERBOSE
 
 while getopts "s:S:kqvh" opt; do
   case $opt in
-    s) SOURCE_DIR=$OPTARG ;;
-    S) STATIC_DIR=$OPTARG ;;
     k) SKIP_COMPILE=YES ;;
     q) QUIET=YES ;;
     v) VERBOSE=YES ;;
@@ -45,19 +40,19 @@ while getopts "s:S:kqvh" opt; do
   esac
 done
 
-if [ ! -d "$SOURCE_DIR" ]; then
-  error_echo "Source directory '$SOURCE_DIR' does not exist." 1
-fi
 
 if [ -z "$SKIP_COMPILE" ]; then
   normal_echo "${CYAN}Building Bootstrap CSS/JS...${RESET}"
   bun run build
 fi
 
-if [ -d "$STATIC_DIR" ]; then
-  normal_echo "${CYAN}Copying static resources from '$STATIC_DIR' to '$SOURCE_DIR'...${RESET}"
-  cp -a "${STATIC_DIR%/}/." "$SOURCE_DIR"
-fi
+normal_echo "${CYAN}Copying static resources from '$STATIC_DIR' to '$SOURCE_DIR'...${RESET}"
+cp -a "${STATIC_DIR%/}/." "$SOURCE_DIR"
+
+chmod 644 "$DOCS_STATIC_DIR"/*
+mkdir -p "$DOCS_STATIC_TARGET_DIR"
+normal_echo "${CYAN}Copying documentation static resources from '$DOCS_STATIC_DIR' to '$DOCS_STATIC_TARGET_DIR'...${RESET}"
+cp -a "${DOCS_STATIC_DIR%/}/." "$DOCS_STATIC_TARGET_DIR"
 
 if [ -z "$SKIP_COMPILE" ]; then
   normal_echo "${CYAN}Converting with tiefdownconverter...${RESET}"

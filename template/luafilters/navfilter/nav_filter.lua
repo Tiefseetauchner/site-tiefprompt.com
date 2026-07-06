@@ -2,10 +2,46 @@ local navlib = require 'navlib'
 local navconfig = require 'navconfig'
 
 local NAV = nil
+local BASE_PATH = nil
 
 local function capture_meta(meta)
   NAV = navlib.build(meta)
+
+  BASE_PATH = nil
+  if meta.base_path then
+    local trimmed = pandoc.utils.stringify(meta.base_path):gsub('^/+', ''):gsub('/+$', '')
+    if trimmed ~= '' then
+      BASE_PATH = trimmed
+    end
+  end
+
   return meta
+end
+
+-- Nav hrefs are built from a path relative to this document's own markdown
+-- project, which knows nothing about where that project's output lands in
+-- the final site (e.g. Documentation builds under /docs/web/). base_path
+-- (set per-project via manifest.toml's metadata_fields) closes that gap.
+-- Static links (see navlib.tree) already carry a final href, so they're
+-- passed through untouched.
+local function prefixed_href(item)
+  if item.static or not BASE_PATH then
+    return item.href
+  end
+  return '/' .. BASE_PATH .. item.href
+end
+
+-- navconfig groups its rules by the base path they apply to (see
+-- navconfig.lua). Find the group matching the current document's base_path,
+-- falling back to '/' for projects that don't set one.
+local function rules_for_base_path()
+  local key = BASE_PATH or '/'
+  for _, group in ipairs(navconfig) do
+    if group.base_path == key then
+      return group.paths
+    end
+  end
+  return {}
 end
 
 local function escape(s)
@@ -23,7 +59,7 @@ local function render_link(item)
   end
   return string.format(
     '<li class="nav-item"><a class="%s" href="%s">%s</a></li>',
-    cls, escape(item.href), escape(item.label)
+    cls, escape(prefixed_href(item)), escape(item.label)
   )
 end
 
@@ -41,7 +77,7 @@ local function render_group(group)
     end
     children[#children + 1] = string.format(
       '<li><a class="%s" href="%s">%s</a></li>',
-      item_cls, escape(child.href), escape(child.label)
+      item_cls, escape(prefixed_href(child)), escape(child.label)
     )
   end
 
@@ -60,7 +96,7 @@ local function render_navbar()
   end
 
   local items = {}
-  for _, item in ipairs(navlib.tree(NAV, navconfig)) do
+  for _, item in ipairs(navlib.tree(NAV, rules_for_base_path())) do
     if item.kind == 'group' then
       items[#items + 1] = render_group(item)
     else

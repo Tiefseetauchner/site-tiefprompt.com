@@ -35,6 +35,17 @@ cli_args = ["-f", "markdown", "-t", "html5"]
 extension_filter = "xmltemplate"
 name = "Sitemap"
 
+[[custom_processors.preprocessors]]
+cli = "true"
+cli_args = []
+extension_filter = "typign_md"
+name = "Typst Ignore MD Ignored"
+
+[[custom_processors.preprocessors]]
+cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
+extension_filter = "typign_md"
+name = "Typst Ignore MD Processed"
+
 [[injections]]
 files = ["custom-tail.html"]
 name = "HTML Tail Injection"
@@ -50,6 +61,16 @@ output = "."
 path = "Markdown"
 
 [[markdown_projects]]
+default_profile = "Documentation"
+name = "Documentation"
+output = "web/docs"
+path = "Documentation"
+resources = ["resources/"]
+
+[markdown_projects.metadata_fields]
+base_path = "docs/web"
+
+[[markdown_projects]]
 default_profile = "Sitemap"
 name = "Sitemap"
 output = "."
@@ -58,6 +79,10 @@ path = "Sitemap"
 [[profiles]]
 name = "Website"
 templates = ["HTML"]
+
+[[profiles]]
+name = "Documentation"
+templates = ["HTML", "PDF"]
 
 [[profiles]]
 name = "Sitemap"
@@ -78,7 +103,7 @@ output_extension = "xml"
 preprocessors = ["Sitemap"]
 
 [[templates]]
-filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua", "luafilters/changelogfilter/changelog_filter.lua"]
+filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua", "luafilters/changelogfilter/changelog_filter.lua", "luafilters/docsindexfilter/docs_index_filter.lua"]
 footer_injections = ["HTML Tail Injection"]
 header_injections = ["HTML Head Injection Split"]
 multi_file_output = true
@@ -92,4 +117,17 @@ format = "Json"
 
 [templates.preprocessors]
 output_extension = "html"
-preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers"]
+preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers", "Typst Ignore MD Processed"]
+
+[[templates]]
+filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/typstpathfilter/typst_path_filter.lua"]
+name = "PDF"
+output = "bundle.pdf"
+template_file = "bundle.typ"
+template_type = "Typst"
+
+[templates.meta_gen]
+feature = "NavOnly"
+
+[templates.preprocessors]
+preprocessors = ["Typst Ignore MD Ignored"]
