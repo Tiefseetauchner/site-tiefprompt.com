@@ -34,6 +34,18 @@ In addition to the theme, there is also a primary color switch that allows you t
 
 This primary color change does not however affect the prompter directly; those are separate, different settings.
 
+## Prompter Screen
+
+Being the most prominent screen of the application, the actual scrolling text screen deserves its own part at {{ autolink '02Usage/02PrompterScreen.md' }}. But below is a sneak peek of what could be your prompter screen after configuring it.
+
+![The primary prompter screen, configured with the various tools at hand](../resources/PrompterScreenBasicConfig.webp){.w-100}
+
+## Display and Text Settings
+
+The two largest articles of the settings screen are the Display Settings and Text Settings screens. Both are too in depth for this part, but are explained further in {{ autolink: '02Usage/03DisplaySettings.md' }} and {{ autolink: '02Usage/04TextSettings.md' }} respectively. These two screens adjust the look and feel of the Teleprompter.
+
+![Display Settings and Text Settings](../resources/DisplayAndTextSettings.webp){.w-100}
+
 ## Saving and Restoring your Settings
 
 You can also save and restore settings using the Save Settings Proile feature.
@@ -46,10 +58,7 @@ See {{ autolink: '02Usage/06SavedSettings.md' }} for more information.
 
 TiefPrompt allows for customization of Keyboard and Controller controls in the app. To adjust the keybindings, access the Keybindings Settings under the settings screen.
 
-![The Saved Settings Screen](../resources/KeybindingsScreen.webp){.w-100}
+![The Keybindings Screen](../resources/KeybindingsScreen.webp){.w-100}
 
 See {{ autolink: '02Usage/05Keybindings.md' }} for more information.
 
-## Display and Text Settings
-
-The remaining two articles of the settings screen are the Display Settings and Text Settings screens. Both are too in depth for this part, but are explained further in {{ autolink: '02Usage/03DisplaySettings.md' }} and {{ autolink: '02Usage/04TextSettings.md' }} respectively. These two screens adjust the look and feel of the Teleprompter.

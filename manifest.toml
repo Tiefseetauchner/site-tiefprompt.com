@@ -2,9 +2,6 @@ smart_clean = true
 smart_clean_threshold = 3
 version = 6
 
-[custom_processors]
-processors = []
-
 [[custom_processors.preprocessors]]
 cli_args = ["-t", "html5"]
 name = "HTML"
@@ -45,6 +42,10 @@ name = "Typst Ignore MD Ignored"
 cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
 extension_filter = "typign_md"
 name = "Typst Ignore MD Processed"
+
+[[custom_processors.processors]]
+name = "TypstFonts"
+processor_args = ["--font-path", "fonts"]
 
 [[injections]]
 files = ["custom-tail.html"]
@@ -123,6 +124,7 @@ preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers", "Ty
 filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/typstpathfilter/typst_path_filter.lua"]
 name = "PDF"
 output = "bundle.pdf"
+processor = "TypstFonts"
 template_file = "bundle.typ"
 template_type = "Typst"
 
