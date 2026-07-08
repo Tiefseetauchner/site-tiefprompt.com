@@ -36,13 +36,13 @@ This primary color change does not however affect the prompter directly; those a
 
 ## Saving and Restoring your Settings
 
-As customization is an integral part of TiefPrompt, and we're aware of multiple-user workflows, there is the option to save and restore settings. That is positioned right below the primary color control, giving access to a list of named, saved settings as well as the option to import or export settings files.
+You can also save and restore settings using the Save Settings Proile feature.
 
 ![The Saved Settings Screen](../resources/ChangeSavedSettings.webp){.w-100}
 
 See {{ autolink: '02Usage/06SavedSettings.md' }} for more information.
 
-## Keyboard Controls
+## Keybinding Settings
 
 TiefPrompt allows for customization of Keyboard and Controller controls in the app. To adjust the keybindings, access the Keybindings Settings under the settings screen.
 

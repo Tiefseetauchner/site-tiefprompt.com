@@ -12,9 +12,6 @@ branches:
   - name: release/v1.0
     label: "v1.0"
     from: main
-  - name: release/v2.0
-    label: "v2.0"
-    from: main
 # Milestones ride the timeline, anchored to a version (on that version's rail).
 # For now they're hand curated; later they can come from repo-scraped releases.
 milestones:
