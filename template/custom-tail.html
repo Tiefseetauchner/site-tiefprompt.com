@@ -30,6 +30,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/swiper-bundle.min.js"></script>
     <script src="/js/fun.js" defer></script>
+    <script src="/js/toc.js" defer></script>
     <script>
       document.querySelectorAll('.tiefprompt-swiper').forEach(function(el) {
         new Swiper(el, {
@@ -94,10 +95,10 @@
 
           var layer = document.createElement('div');
           layer.className = 'wave-layer';
-          layer.style.height = crestFromBottom + 'vh';
+          layer.style.height = crestFromBottom + 'lvh';
           layer.style.background =
             'url("/images/wave.svg") left top / ' + WAVE_W + 'px ' + WAVE_H + 'px repeat-x, ' +
-            'linear-gradient(' + WAVE_COLOR + ', ' + WAVE_COLOR + ') left ' + WAVE_H + 'px / 100% 300vh repeat-x';
+            'linear-gradient(' + WAVE_COLOR + ', ' + WAVE_COLOR + ') left ' + WAVE_H + 'px / 100% 300lvh repeat-x';
           layer.style.opacity = (MIN_OPACITY + t * (MAX_OPACITY - MIN_OPACITY)).toFixed(3);
           layer._factor = MIN_FACTOR + t * (MAX_FACTOR - MIN_FACTOR);
 

@@ -36,7 +36,7 @@ This primary color change does not however affect the prompter directly; those a
 
 ## Prompter Screen
 
-Being the most prominent screen of the application, the actual scrolling text screen deserves its own part at {{ autolink '02Usage/02PrompterScreen.md' }}. But below is a sneak peek of what could be your prompter screen after configuring it.
+Being the most prominent screen of the application, the actual scrolling text screen deserves its own part at {{ autolink: '02Usage/02PrompterScreen.md' }}. But below is a sneak peek of what could be your prompter screen after configuring it.
 
 ![The primary prompter screen, configured with the various tools at hand](../resources/PrompterScreenBasicConfig.webp){.w-100}
 
@@ -48,7 +48,7 @@ The two largest articles of the settings screen are the Display Settings and Tex
 
 ## Saving and Restoring your Settings
 
-You can also save and restore settings using the Save Settings Proile feature.
+You can also save and restore settings using the Save Settings Profile feature.
 
 ![The Saved Settings Screen](../resources/ChangeSavedSettings.webp){.w-100}
 

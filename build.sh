@@ -40,6 +40,8 @@ while getopts "s:S:kqvh" opt; do
   esac
 done
 
+# Clean build directory
+rm -rf "$SOURCE_DIR"
 
 if [ -z "$SKIP_COMPILE" ]; then
   normal_echo "${CYAN}Building Bootstrap CSS/JS...${RESET}"
@@ -52,7 +54,7 @@ cp -a "${STATIC_DIR%/}/." "$SOURCE_DIR"
 chmod 644 "$DOCS_STATIC_DIR"/*
 mkdir -p "$DOCS_STATIC_TARGET_DIR"
 normal_echo "${CYAN}Copying documentation static resources from '$DOCS_STATIC_DIR' to '$DOCS_STATIC_TARGET_DIR'...${RESET}"
-cp -a "${DOCS_STATIC_DIR%/}/." "$DOCS_STATIC_TARGET_DIR"
+rsync -a --exclude='*.xcf' "${DOCS_STATIC_DIR%/}/" "$DOCS_STATIC_TARGET_DIR"
 
 if [ -z "$SKIP_COMPILE" ]; then
   normal_echo "${CYAN}Converting with tiefdownconverter...${RESET}"

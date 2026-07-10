@@ -29,7 +29,7 @@
 
 #let banner-heading(it) = {
   place(top + left, dx: -margin-x, dy: -margin-top)[
-    #box(width: page-w, height: banner-h, fill: dark-teal, clip: true)[
+    #box(width: page-w, height: banner-h - 10pt, fill: dark-teal, clip: true)[
       #place(bottom + left)[
         #wave-band(page-w, banner-h * 0.3, 0.4cm, 20cm, 40deg, white)
       ]
@@ -92,6 +92,28 @@
   justify: true,
   linebreaks: "optimized",
 )
+
+#show outline.entry.where(
+  level: 0
+): set block(above: 1.2em)
+
+#show figure: set block(below: 1.2em)
+
+// Matches the state key in Documentation/00Defs.typ's `cover-page` — that file
+// is concatenated into output.typ and #include-d below, so it can't share a
+// #let binding with this scope, but a state is addressed globally by key.
+#let outline-split-state = state("tiefprompt-outline-split", none)
+
+#show outline.entry: it => context {
+  let split-title = outline-split-state.at(it.element.location())
+  if split-title != none {
+    block(above: 2em, below: 0.5em)[
+      #link(it.element.location(), text(weight: "bold", fill: teal, split-title))
+    ]
+  } else {
+    it
+  }
+}
 
 #cover-page(
   [TiefPrompt Documentation],

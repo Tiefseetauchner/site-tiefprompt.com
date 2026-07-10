@@ -66,7 +66,7 @@ return {
       -- front matter (see index.typign_md), resolved by navlib.tree.
       -- Documentation pages are flat files (no directory/index.html nesting
       -- like the rest of the site), so they need the .html extension kept.
-      { pattern = '^(%d+%a+)/%d+(.+)%.html$', group = '%1', label = '%2', keep_extension = true, order = 10 },
+      { pattern = '^(%d+%a+)/%d+(.+)%.html$', group = '%1', keep_extension = true, order = 20 },
     },
   },
 }

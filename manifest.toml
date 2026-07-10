@@ -36,12 +36,20 @@ name = "Sitemap"
 cli = "true"
 cli_args = []
 extension_filter = "typign_md"
+ignore = true
 name = "Typst Ignore MD Ignored"
 
 [[custom_processors.preprocessors]]
 cli_args = ["-f", "markdown+inline_code_attributes", "-t", "html5"]
 extension_filter = "typign_md"
 name = "Typst Ignore MD Processed"
+
+[[custom_processors.preprocessors]]
+cli = "true"
+cli_args = []
+extension_filter = "typ"
+ignore = true
+name = "Ignore Typst for Web"
 
 [[custom_processors.processors]]
 name = "TypstFonts"
@@ -104,7 +112,7 @@ output_extension = "xml"
 preprocessors = ["Sitemap"]
 
 [[templates]]
-filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua", "luafilters/changelogfilter/changelog_filter.lua", "luafilters/docsindexfilter/docs_index_filter.lua"]
+filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/navfilter/nav_filter.lua", "luafilters/changelogfilter/changelog_filter.lua", "luafilters/docsindexfilter/docs_index_filter.lua", "luafilters/tocfilter/toc_filter.lua", "luafilters/lazyimagefilter/lazy_image_filter.lua"]
 footer_injections = ["HTML Tail Injection"]
 header_injections = ["HTML Head Injection Split"]
 multi_file_output = true
@@ -118,7 +126,7 @@ format = "Json"
 
 [templates.preprocessors]
 output_extension = "html"
-preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers", "Typst Ignore MD Processed"]
+preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers", "Typst Ignore MD Processed", "Ignore Typst for Web"]
 
 [[templates]]
 filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/typstpathfilter/typst_path_filter.lua"]

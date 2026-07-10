@@ -82,6 +82,7 @@ $link-color-dark: color.mix(white, $coral, 50%);
 #waveBg {
   position: fixed;
   inset: 0;
+  height: 100lvh;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
@@ -134,3 +135,5 @@ figcaption {
 
 @import "changelog";
 @import "fun";
+@import "toc";
+@import "callouts";

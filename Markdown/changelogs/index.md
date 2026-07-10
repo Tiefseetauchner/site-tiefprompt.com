@@ -16,7 +16,7 @@ branches:
 # For now they're hand curated; later they can come from repo-scraped releases.
 milestones:
   - version: "1.0.0"
-    label: "TiefPrompt 1.0 — the first stable release"
+    label: "TiefPrompt 1.0 --- the first stable release"
   - version: "0.1.0"
     label: "First public release"
 ---

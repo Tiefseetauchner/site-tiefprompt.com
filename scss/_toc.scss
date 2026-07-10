@@ -1,0 +1,91 @@
+// "On this page" sidebar. Markup is emitted by toc_filter.lua, which wraps
+// docs pages that have at least one h2/h3 as:
+//   .docs-layout > (.docs-toc-toggle + .docs-toc > nav > ul) + .docs-content
+// The toggle/sidebar come before the content in DOM order so they land right
+// under the nav on narrow viewports (where .docs-layout is plain block flow,
+// not flex) instead of after all the article content; `order` below puts
+// them back on the right once the flex layout kicks in.
+// Scrollspy (.active) and the toggle's open/close state come from js/toc.js;
+// --toc-top is set there too, from the real rendered navbar height.
+
+.docs-toc-toggle {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  color: var(--bs-body-color);
+  text-align: left;
+  font-weight: 600;
+}
+
+.docs-toc {
+  nav {
+    display: none;
+  }
+
+  &.open nav {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    ul {
+      padding-left: 1rem;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.25rem 0.75rem;
+    border-left: 3px solid transparent;
+    color: var(--bs-secondary-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--bs-body-color);
+    }
+
+    &.active {
+      border-left-color: $teal;
+      color: var(--bs-body-color);
+      font-weight: 600;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .docs-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .docs-content {
+    flex: 1;
+    min-width: 0;
+    order: 2;
+  }
+
+  .docs-toc-toggle {
+    display: none;
+  }
+
+  .docs-toc {
+    flex: 0 0 240px;
+    order: 3;
+    position: sticky;
+    top: var(--toc-top, 5rem);
+    max-height: calc(100vh - var(--toc-top, 5rem));
+    overflow-y: auto;
+
+    nav {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+// Callout boxes for docs content, written in Markdown as fenced divs:
+//   ::: callout-warn
+//   Text goes here.
+//   :::
+// Pandoc's fenced_divs extension (on by default for the "markdown" reader)
+// turns the unbraced class name after ::: directly into <div class="...">,
+// no {.class} braces needed.
+
+@mixin callout($color) {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, $color 40%, transparent);
+  background: color-mix(in srgb, $color 12%, var(--bs-body-bg));
+
+  &::before {
+    position: absolute;
+    left: 1rem;
+    top: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.callout-warn {
+  @include callout($coral);
+
+  &::before {
+    content: "\26A0";
+    color: color.mix(black, $coral, 20%);
+
+    [data-bs-theme="dark"] & {
+      color: color.mix(white, $coral, 40%);
+    }
+  }
+}
+
+.callout-info {
+  @include callout($teal);
+
+  &::before {
+    content: "\2139";
+    color: color.mix(black, $teal, 10%);
+
+    [data-bs-theme="dark"] & {
+      color: color.mix(white, $teal, 30%);
+    }
+  }
+}
