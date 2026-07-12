@@ -9,23 +9,26 @@ description: "Configure font, size and formatting of the text shown in the telep
 
 The Text Settings screen is the primary entrypoint for changing how the text looks in the prompter. The default settings are opinionated --- but every setting is configurable.
 
-![The Text Settings screen](../resources/TextSettingsScreen.webp){.w-100}
+![The Text Settings screen](../resources/text_settings_screen/TextSettingsScreen.webp){.w-100}
 
 ## Text Display Settings
 
 In the Text Settings screen, the text size can be adjusted with a slider by pressing the "Default Font Size" entry:
 
-![The "Default Font Size" dialog open](../resources/TextSettingsScreenFontSize.webp){.w-100}
+![The "Default Font Size" dialog open](../resources/text_settings_screen/DefaultFontSize.webp){.w-100}
 
 The alignment of the text can also be changed via a dropdown. Available settings are left, centered, right, and justified. The default is left.
 
-![The "Text Alignment" dropdown open](../resources/TextSettingsScreenAlignment.webp){.w-100}
+![The "Text Alignment" dropdown open](../resources/text_settings_screen/TextAlignment.webp){.w-100}
 
 ## Font Settings
 
-The font used in the scrolling text and markdown chapter headings (see {{ autolink: '02Usage/04TextSettings.md#chapter-headings'}}) can be changed via the "Font Family" dropdown. The default is "Roboto".
+The font used in the scrolling text and markdown chapter headings (see {{ autolink: '02Usage/04TextSettings.md#current-chapter-display'}}) can be changed via the "Font Family" dropdown. The default is "Roboto".
 
-![The "Font Family" dropdown open](../resources/TextSettingsScreenFontFamily.webp){.w-100}
+![The "Font Family" dropdown open](../resources/text_settings_screen/FontFamily.webp){.w-100}
+
+<!--
+TODO when feature is stable
 
 ## Custom Fonts
 
@@ -48,12 +51,13 @@ You can also remove a font variant by pressing the trashcan icon next to it. Thi
 Lastly, by pressing the edit icon next to a font variant, you can edit the variant's weight and whether it is an italic font or not. This is useful if the app does not detect the variant correctly, or if you want to change the weight of a font variant.
 
 ![The "Edit Font Variant" dialog open](../resources/TextSettingsScreenEditFontVariant.webp){.w-100}
+-->
 
 ## Markdown
 
 Markdown rendering can be enabled via the "Enable Markdown" toggle. This will render the text in the prompter as Markdown, allowing for formatting such as bold, italics, headings, and more. The default is off.
 
-![The "Enable Markdown" toggle](../resources/TextSettingsScreenMarkdown.webp){.w-100}
+![The "Enable Markdown" toggle](../resources/text_settings_screen/EnableMarkdown.webp){.w-50}
 
 This is not a full Markdown renderer, but it does support the most common formatting options. For more information on what is supported, see {{ autolink: '04Contributing/03Markdown.md' }}.
 
@@ -61,8 +65,8 @@ This is not a full Markdown renderer, but it does support the most common format
 
 The toggle "Show Current Chapter" controls whether the current chapter is displayed in the prompter. This can only be enabled if Markdown is enabled. The default is off.
 
-![The "Show Current Chapter" toggle](../resources/TextSettingsScreenCurrentChapter.webp){.w-100}
+![The "Show Current Chapter" toggle](../resources/text_settings_screen/ShowCurrentChapter.webp){.w-50}
 
 When the current chapter is displayed, it will be shown in a separate line above the scrolling text, and will be updated as the text scrolls. The chapter is determined by the first heading in the Markdown text that has been scrolled by in the prompter.
 
-![Example of the current chapter being displayed in the prompter](../resources/PrompterScreenCurrentChapter.webp){.w-100}
+![Example of the current chapter being displayed in the prompter](../resources/prompter_screen/MarkdownAndChapter.webp){.w-100}

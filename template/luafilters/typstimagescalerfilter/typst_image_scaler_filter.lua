@@ -10,7 +10,7 @@
 -- applied on top of that percentage, so the whole PDF's image size can
 -- be tuned from one place without editing every doc page.
 
-local SCALE = 0.6
+local SCALE = 0.9
 
 local function handle_image(el)
   if not (FORMAT and FORMAT:match('typst')) then

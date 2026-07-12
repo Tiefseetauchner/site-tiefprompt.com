@@ -155,6 +155,23 @@ end
 -- Builds the inline content for `{{ autolink: '<path>'[, '<label>'] }}`.
 -- Returns a list of inlines to splice into the document, or nil if the
 -- expression isn't an autolink call at all.
+--
+-- `<path>` may carry a `#heading-id` fragment (e.g.
+-- '02Usage/01Setup.md#primary-controls') to jump straight to a heading
+-- instead of the top of the page. The id is whatever pandoc's
+-- auto_identifiers extension stamps on that heading -- the same slug you'd
+-- see in the HTML output's URL. In HTML that's just appended to the page's
+-- href as a normal fragment. In the Typst bundle every page is concatenated
+-- into one pandoc run, so auto_identifiers already dedupes ids across the
+-- *whole* document (appending -1, -2, ... to later collisions) -- the same
+-- way it would if you wrote all the pages by hand in one file. That means a
+-- fragment link can jump straight to `<heading-id>` without going through
+-- the page-level anchor mechanism below; the only wrinkle is that if two
+-- pages share a heading whose text produces the same id, a link written
+-- against the bare id lands on whichever of them pandoc numbered first.
+-- Fixing that would mean tracking which blocks came from which source page
+-- through the concatenation, which nothing here currently does -- not worth
+-- it for what should be a rare collision.
 local function build_autolink(expr_text)
   local lower = expr_text:lower()
   if lower:sub(1, 9) ~= 'autolink:' then
@@ -162,9 +179,14 @@ local function build_autolink(expr_text)
   end
 
   local args = extract_args(expr_text:sub(10))
-  local source_path = args[1]
-  if not source_path then
+  local raw_path = args[1]
+  if not raw_path then
     return { pandoc.Str('{{ ' .. expr_text .. ' RETURNED missing path }}') }
+  end
+
+  local source_path, fragment = raw_path:match('^([^#]*)#?(.*)$')
+  if fragment == '' then
+    fragment = nil
   end
 
   local node = find_node_by_source_path(source_path)
@@ -176,10 +198,12 @@ local function build_autolink(expr_text)
   local label = args[2] or entry.label or node.title or source_path
 
   if FORMAT and FORMAT:match('typst') then
-    return { pandoc.Link({ pandoc.Str(label) }, '#' .. typst_anchor_label(node.id)) }
+    local target = fragment and ('#' .. fragment) or ('#' .. typst_anchor_label(node.id))
+    return { pandoc.Link({ pandoc.Str(label) }, target) }
   end
 
-  return { pandoc.Link({ pandoc.Str(label) }, prefixed_href(entry.href)) }
+  local href = prefixed_href(entry.href) .. (fragment and ('#' .. fragment) or '')
+  return { pandoc.Link({ pandoc.Str(label) }, href) }
 end
 
 -- Builds the inline content for `{{ anchor: '<own source path>' }}`, the

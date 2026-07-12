@@ -19,12 +19,12 @@ As per current version v1.1.0+, there is a bug where only the **first listed act
 
 The Keybindings can be changed in the Keybindings Settings screen, which is accessible from the settings menu. Each action has a list of currently assigned shortcuts, and can be asigned a new one or have an old one removed by pressing the keybinding in the list. This will open a dialog as shown below.
 
-![The Keybinding Settings screen, with the "Change Bindings" dialog open](../resources/KeybindingsScreenChangeSetting.webp){.w-100}
+![The Keybinding Settings screen, with the "Change Bindings" dialog open](../resources/keybindings_settings_screen/PlayPause.webp){.w-100}
 
 A new keybinding can be assigned by pressing the "Add Binding" button, which opens another dialog where you can press the desired key or controller button.
 
-![The "Add Binding" dialog, waiting for a key or controller button to be pressed](../resources/KeybindingsScreenAddBinding.webp){.w-100}
+![The "Add Binding" dialog, waiting for a key or controller button to be pressed](../resources/keybindings_settings_screen/AddBinding.webp){.w-100}
 
 A keybinding can be removed by pressing the trashcan icon next to it in the list of currently assigned bindings. This will remove the binding immediately, with no confirmation dialog.
 
-![The Keybinding Settings screen, with the "Change Bindings" dialog open and a keybinding being removed](../resources/KeybindingsScreenRemoveBinding.webp){.w-100}
+![The Keybinding Settings screen, with the "Change Bindings" dialog open and a keybinding being removed](../resources/keybindings_settings_screen/RemoveBinding.webp){.w-100}

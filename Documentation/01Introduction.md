@@ -7,7 +7,7 @@ description: "The Introduction to TiefPrompt's user interface"
 
 This documentation primarily exists for guiding you, the user, through the application and explaining features. Historically grown apps often have very complicated interfaces if they weren't designed from the beginning to be obviously accessible. So does TiefPrompt. Here, we shall strive to disentangle that.
 
-![Hero showing an example of TiefPrompts user interface](resources/hero.webp){.w-100}
+![Hero showing an example of TiefPrompts user interface](resources/hero/Hero.webp){.w-100}
 
 ## TiefPrompts primary function
 

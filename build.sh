@@ -51,7 +51,6 @@ fi
 normal_echo "${CYAN}Copying static resources from '$STATIC_DIR' to '$SOURCE_DIR'...${RESET}"
 cp -a "${STATIC_DIR%/}/." "$SOURCE_DIR"
 
-chmod 644 "$DOCS_STATIC_DIR"/*
 mkdir -p "$DOCS_STATIC_TARGET_DIR"
 normal_echo "${CYAN}Copying documentation static resources from '$DOCS_STATIC_DIR' to '$DOCS_STATIC_TARGET_DIR'...${RESET}"
 rsync -a --exclude='*.xcf' "${DOCS_STATIC_DIR%/}/" "$DOCS_STATIC_TARGET_DIR"
