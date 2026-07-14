@@ -30,7 +30,7 @@
   polygon(fill: fill, ..pts)
 }
 
-#let banner-heading(title, kicker: none) = place(
+#let banner-heading(title, kicker: none, subtitle: none) = place(
   left + horizon,
   dy: -12%,
   [
@@ -40,8 +40,24 @@
         #text(font: "Roboto", size: 1em, weight: "bold", fill: coral, tracking: 2pt)[#upper(kicker)]
         #v(0.5em)
       ]
-      #par(leading: 0.9em, justify: false)[
-        #text(font: "Exo", size: 2.6em, weight: "bold", fill: ink)[#title]
+      #box(
+        inset: (left: 3em),
+        width: 100%,
+      )[
+        #par(hanging-indent: 2em, justify: false)[
+          #text(
+            font: "Exo",
+            size: 2.6em,
+            weight: "bold",
+            fill: ink,
+          )[#title]
+        ]
+      ]
+      #if subtitle != none [
+        #v(0.5em)
+        #par(justify: false)[
+          #text(font: "Exo", size: 1.3em, fill: ink, style: "italic")[#subtitle]
+        ]
       ]
     ]
   ],
@@ -54,7 +70,7 @@
 
 #let section-counter = counter("tiefprompt-section")
 
-#let cover-page(title) = page(
+#let cover-page(title, subtitle: none) = page(
   margin: 0pt,
   fill: coral.lighten(88%),
   header: none,
@@ -76,5 +92,26 @@
     ]
   ]
 
-  #context banner-heading(title, kicker: [Section #section-counter.display()])
+  #context banner-heading(title, kicker: [Section #section-counter.display()], subtitle: subtitle)
 ]
+
+#let callout(
+  type: "info",
+  content,
+) = {
+  let color = if type == "info" { teal } else if type == "warn" { coral } else { ink }
+  // The callout has a small note icon at the top, which are \26A0 for warn and \2139 for info. If another type is specified, it will default to no icon.
+  let icon = if type == "info" { "\u{2139}" } else if type == "warn" { "\u{26A0}" } else { "" }
+
+  box(width: 100%, fill: color.lighten(88%), radius: 0.5em, inset: (
+    top: 1em,
+    bottom: 1em,
+    left: 1.2em,
+    right: 1.2em,
+  ))[
+    #place()[#text(font: "Roboto", size: 1em, weight: "bold", fill: color)[#icon]]
+    #box(inset: (left: 1.2em))[#text(font: "Roboto", size: 1em, fill: ink)[#content]]
+  ]
+}
+
+#let horizontalrule = align(center)[#line(length: 80%)]

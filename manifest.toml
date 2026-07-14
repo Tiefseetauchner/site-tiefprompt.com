@@ -129,7 +129,7 @@ output_extension = "html"
 preprocessors = ["HTML Direct", "HTML from Markdown", "HTML", "MDL Headers", "Typst Ignore MD Processed", "Ignore Typst for Web"]
 
 [[templates]]
-filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/typstpathfilter/typst_path_filter.lua", "luafilters/typstimagescalerfilter/typst_image_scaler_filter.lua"]
+filters = ["luafilters/megareplacerfilter/mega_replacer_filter.lua", "luafilters/typstpathfilter/typst_path_filter.lua", "luafilters/typstimagescalerfilter/typst_image_scaler_filter.lua", "luafilters/typstcalloutfilter/typst_callout_filter.lua"]
 name = "PDF"
 output = "bundle.pdf"
 processor = "TypstFonts"

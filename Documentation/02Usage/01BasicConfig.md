@@ -7,6 +7,10 @@ description: "Configure TiefPrompt's language, theme and primary color after ins
 
 {{ anchor: '02Usage/01BasicConfig.md' }}
 
+::: callout-info
+TiefPrompt is an open-source project. However, when downloaded via the App Store or Google Play, it is a freemium app. This means that some features are locked behind an in-app purchase. The FOSS version, which is available on GitHub, provides all features for free. This documentation primarily covers the FOSS version.
+:::
+
 TiefPrompt is a relatively simple app designed to be usable without any setup. When first opening the app, reading the changelogs and our plea for support (which is recommended but not required, obviously), you will be greeted with the home screen. From there, you can start using the app immediately, and it will work with the default settings. However, after installing, there are some setup steps you can take to customize the app. If you want to skip the walkthrough of primary app controls, you can jump to the [Settings](#settings) section.
 
 ## Primary Controls

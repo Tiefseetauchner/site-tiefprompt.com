@@ -29,9 +29,9 @@
 
 #let banner-heading(it) = {
   place(top + left, dx: -margin-x, dy: -margin-top)[
-    #box(width: page-w, height: banner-h - 10pt, fill: dark-teal, clip: true)[
-      #place(bottom + left)[
-        #wave-band(page-w, banner-h * 0.3, 0.4cm, 20cm, 40deg, white)
+    #box(width: page-w, height: banner-h - 10pt, fill: dark-teal)[
+      #place(bottom + left, dy: 1pt)[
+        #wave-band(page-w, banner-h * 0.32, 0.4cm, 20cm, 40deg, white)
       ]
       #place(left + horizon, dx: margin-x)[
         #text(fill: white)[#it]

@@ -17,7 +17,7 @@ As per current version v1.1.0+, there is a bug where only the **first listed act
 
 ## Changing Keybindings
 
-The Keybindings can be changed in the Keybindings Settings screen, which is accessible from the settings menu. Each action has a list of currently assigned shortcuts, and can be asigned a new one or have an old one removed by pressing the keybinding in the list. This will open a dialog as shown below.
+The Keybindings can be changed in the Keybindings Settings screen, which is accessible from the settings menu. Each action has a list of currently assigned shortcuts, and can be assigned a new one or have an old one removed by pressing the keybinding in the list. This will open a dialog as shown below.
 
 ![The Keybinding Settings screen, with the "Change Bindings" dialog open](../resources/keybindings_settings_screen/PlayPause.webp){.w-100}
 
@@ -28,3 +28,24 @@ A new keybinding can be assigned by pressing the "Add Binding" button, which ope
 A keybinding can be removed by pressing the trashcan icon next to it in the list of currently assigned bindings. This will remove the binding immediately, with no confirmation dialog.
 
 ![The Keybinding Settings screen, with the "Change Bindings" dialog open and a keybinding being removed](../resources/keybindings_settings_screen/RemoveBinding.webp){.w-100}
+
+## Default Keybindings
+
+The default keybindings are as follows:
+
+- Play/Pause: `Enter`, `Space`
+- Scroll Up Small: `Shift + Up Arrow`
+- Scroll Down Small: `Shift + Down Arrow`
+- Scroll Up: `Up Arrow`
+- Scroll Down: `Down Arrow`
+- Page Up: `Page Up`
+- Page Down: `Page Down`
+- Jump to Start: `Home`
+- Jump to End: `End`
+- Toggle Controls: `Tab`
+- Speed Up: `=`, `Numpad +`
+- Speed Down: `-`, `Numpad -`
+- Font Size Up: `Ctrl + =`, `Ctrl + Numpad +`
+- Font Size Down: `Ctrl + -`, `Ctrl + Numpad -`
+- Open Settings: `Ctrl + ,`
+- Save Settings from Prompter: `Ctrl + S`
