@@ -10,6 +10,6 @@ description: Map controls to whatever works for your setup.
 
 If you have a Bluetooth remote or a keyboard or literally any input device, you can map it to whatever TiefPrompt action makes sense for you.
 
-![Custom keybindings in action](/images/features/keybindings.webp){.w-100}
+![Custom keybindings in action](/images/features/Keybindings.webp){.w-100}
 
 The defaults are fine if you're just tapping the screen, but once you have a remote in your hand it's really nice to be able to assign the buttons yourself instead of hoping they match up.

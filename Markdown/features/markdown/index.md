@@ -10,7 +10,7 @@ description: Structure your scripts with familiar markdown syntax.
 
 So you know Markdown? You can just use it. Headings, bold, italic --- it all renders while you're reading the script.
 
-![Markdown formatting in action](/images/features/markdown.webp){.w-100}
+![Markdown formatting in action](/images/features/Markdown.webp){.w-100}
 
 Honestly I added this mostly because I wanted to visually separate sections in my scripts without just putting a bunch of dashes. It works really well for that.
 

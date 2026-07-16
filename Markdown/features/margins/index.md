@@ -10,7 +10,7 @@ description: Mask the screen edges with an optional smooth fade to keep eyes on 
 
 The top and bottom of the screen are where lines appear and disappear, and that motion can pull your eyes away from the part you're actually reading. Vertical margins mask those edges so your attention stays in the middle.
 
-![Margins and fade in action](/images/features/margins.webp){.w-100}
+![Margins and fade in action](/images/features/Margins.webp){.w-100}
 
 You can set how much of the screen the margins cover, and optionally add a smooth fade instead of a hard cut --- text gently dissolves in and out at the edges rather than popping. It looks nicer and it's easier on the eyes during a long read.
 
