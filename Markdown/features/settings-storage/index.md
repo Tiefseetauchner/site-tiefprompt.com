@@ -1,6 +1,7 @@
 ---
 title: Settings Storage
 og_title: Save & Restore Settings
+og_image: https://tiefprompt.com/images/og/settings_storage.jpg
 description: Your preferences, backed up and portable.
 ---
 

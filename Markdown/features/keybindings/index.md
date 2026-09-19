@@ -1,6 +1,7 @@
 ---
 title: Keybindings
 og_title: Custom Keybindings
+og_image: https://tiefprompt.com/images/og/keybindings.jpg
 description: Map controls to whatever works for your setup.
 ---
 

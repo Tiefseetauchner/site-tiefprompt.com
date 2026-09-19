@@ -1,3 +1,8 @@
+---
+title: Donate to TiefPrompt
+description: Further the development of TiefPrompt by donating. Every Euro helps!
+---
+
 # Do you want to Donate?
 
 If so, thank you! Just follow one of the below links. Every donation counts!

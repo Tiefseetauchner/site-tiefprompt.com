@@ -1,6 +1,7 @@
 ---
 title: Script Storage
 og_title: Save & Load Scripts
+og_image: https://tiefprompt.com/images/og/saved_scripts.jpg
 description: Your scripts stay on your device. Open them, edit them, go.
 ---
 

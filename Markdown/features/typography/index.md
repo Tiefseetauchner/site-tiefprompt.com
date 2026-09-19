@@ -1,6 +1,7 @@
 ---
 title: Typography
 og_title: Typography Control
+og_image: https://tiefprompt.com/images/og/typography.jpg
 description: Font size and alignment tuned to your reading distance.
 ---
 

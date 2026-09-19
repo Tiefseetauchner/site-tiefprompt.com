@@ -1,5 +1,7 @@
 ---
 title: Font Choice
+og_title: Font Choice
+og_image: https://tiefprompt.com/images/og/font_choice.jpg
 description: Pick the typeface that reads best for you. Serif, sans-serif, slab, and OpenDyslexia.
 ---
 
@@ -13,4 +15,4 @@ TiefPrompt allows you to chose your font the way you need it.
 
 With a selection of Serif, Sans-Serif, Slab and, my personal favorite, OpenDyslexia, you always find the font you were wishing for.
 
-`0.12.1`{.badge .text-bg-warning .prem-font} It is currently not possible to load a custom font --- if a new font should be included, please tell us on GitHub and, if license allows, it will be included!
+`1.2.0`{.badge .text-bg-warning .prem-font} Custom fonts are currently in nightly testing and will be added with the upcoming 1.2.0  release.

@@ -1,5 +1,7 @@
 ---
 title: Mirror Modes
+og_title: Mirror Modes
+og_image: https://tiefprompt.com/images/og/mirror_modes.jpg
 description: Horizontal and vertical flip for beam-splitter glass and mirrored prompter hardware.
 ---
 

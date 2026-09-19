@@ -1,5 +1,7 @@
 ---
 title: Reading Indicators
+og_title: Reading Indicators
+og_image: https://tiefprompt.com/images/og/reading_indicators.jpg
 description: Adjustable bars that frame the active line so you never lose your place.
 ---
 

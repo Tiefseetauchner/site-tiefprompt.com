@@ -1,6 +1,7 @@
 ---
 title: Theming
 og_title: Prompter Theming
+og_image: https://tiefprompt.com/images/og/theming.jpg
 description: Any background and text color, plus app theme and accent color, for set-matching and glare control.
 ---
 

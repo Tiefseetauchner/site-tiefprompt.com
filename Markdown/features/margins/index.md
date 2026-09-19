@@ -1,6 +1,7 @@
 ---
 title: Margins & Fade
 og_title: Vertical Margins & Fade
+og_image: https://tiefprompt.com/images/og/margins.jpg
 description: Mask the screen edges with an optional smooth fade to keep eyes on the active lines.
 ---
 

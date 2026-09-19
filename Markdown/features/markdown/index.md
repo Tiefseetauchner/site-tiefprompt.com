@@ -1,6 +1,7 @@
 ---
 title: Markdown
 og_title: Markdown Formatting
+og_image: https://tiefprompt.com/images/og/markdown.jpg
 description: Structure your scripts with familiar markdown syntax.
 ---
 

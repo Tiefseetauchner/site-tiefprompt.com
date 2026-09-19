@@ -1,5 +1,7 @@
 ---
 title: Countdown Timer
+og_title: Countdown Timer
+og_image: https://tiefprompt.com/images/og/countdown_timer.jpg
 description: Never need to make a run for it. Start the prompter on your own time with a built-in countdown timer.
 ---
 
