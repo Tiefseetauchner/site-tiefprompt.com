@@ -6,8 +6,8 @@ description: Privacy policy for TiefPrompt.
 
 # TiefPrompt Privacy Policy
 
-**Effective date:** 5 May 2026
-**Version:** 1.0
+**Effective date:** 1 October 2026
+**Version:** 1.1
 
 ## Summary
 

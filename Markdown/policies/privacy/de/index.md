@@ -6,8 +6,8 @@ description: Datenschutzerklärung für TiefPrompt.
 
 # Datenschutzerklärung TiefPrompt
 
-**Stand:** 5. Mai 2026
-**Version:** 1.0
+**Stand:** 1 October 2026
+**Version:** 1.1
 
 ## Zusammenfassung
 
