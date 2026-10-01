@@ -43,6 +43,7 @@ To access the settings, click the cogwheel below the primary app buttons as show
 
 The primary language TiefPrompt is developed in is English. However, there are other languages available. Among them are:
 
+- Arabic
 - German
 - Russian
 - Simplified Chinese

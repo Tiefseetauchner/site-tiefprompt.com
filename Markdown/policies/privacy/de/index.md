@@ -11,7 +11,9 @@ description: Datenschutzerklärung für TiefPrompt.
 
 ## Zusammenfassung
 
-TiefPrompt ist eine Teleprompter-Anwendung. Sie erhebt, übermittelt und speichert keine personenbezogenen Daten auf einem vom Entwickler betriebenen Server. Alles, was Sie in TiefPrompt eingeben — Skripte, Einstellungen, Profile, Tastenbelegungen — verbleibt auf Ihrem Gerät. Der Entwickler hat darauf keinen Zugriff, kann diese Daten nicht einsehen und nicht wiederherstellen.
+TiefPrompt ist eine Teleprompter-Anwendung. Sie erhebt, übermittelt und speichert keine personenbezogenen Daten auf einem vom Entwickler betriebenen Server. Alles, was Sie in TiefPrompt eingeben --- Skripte, Einstellungen, Profile, Tastenbelegungen --- verbleibt auf Ihrem Gerät. Der Entwickler hat darauf keinen Zugriff, kann diese Daten nicht einsehen und nicht wiederherstellen.
+
+Diese Datenschutzerklärung gilt ausschließlich für offizielle Builds und Artefakte von TiefPrompt, die von Lena Tauchner (auch Tiefseetauchner) veröffentlicht werden. Alle anderen Builds oder Artefakte, wie z. B. Forks, veränderte Builds oder umbenannte Ableitungen, sind von dieser Datenschutzerklärung ausgenommen, unabhängig davon, über welchen Kanal sie verbreitet werden und ob sie auf diese Datenschutzerklärung verweisen.
 
 Die einzige Netzwerkkommunikation, die TiefPrompt durchführt, ist die Validierung von In-App-Käufen im Freemium-Build, die durch Apple bzw. Google abgewickelt wird (siehe Abschnitt 7). Der FOSS-Build führt überhaupt keine Netzwerkkommunikation durch.
 
@@ -21,8 +23,8 @@ Diese Erklärung beschreibt die aktuelle Version von TiefPrompt. Künftige Versi
 
 Diese Datenschutzerklärung unterscheidet zwischen zwei Builds von TiefPrompt:
 
-- **Freemium-Build** — der Build, der ausschließlich über den Apple App Store (iOS und macOS) sowie über den Google Play Store (Android) vertrieben wird. Dieser Build enthält In-App-Kauf-Funktionalität und führt ausschließlich zur Validierung von In-App-Käufen Netzwerkkommunikation durch, und zwar auf Ihrem Gerät.
-- **FOSS-Build** — der freie und quelloffene Build, der über F-Droid (Android), https://lukechriswalker.at sowie GitHub Releases (Windows, Linux, macOS, Android) vertrieben wird. Dieser Build enthält keine In-App-Kauf-Funktionalität und führt keinerlei Netzwerkkommunikation durch.
+- **Freemium-Build** --- der Build, der ausschließlich über den Apple App Store (iOS und macOS) sowie über den Google Play Store (Android) vertrieben wird. Dieser Build enthält In-App-Kauf-Funktionalität und führt ausschließlich zur Validierung von In-App-Käufen Netzwerkkommunikation durch, und zwar auf Ihrem Gerät.
+- **FOSS-Build** --- der freie und quelloffene Build, der über F-Droid (Android), https://lukechriswalker.at sowie GitHub Releases (Windows, Linux, macOS, Android) vertrieben wird. Dieser Build enthält keine In-App-Kauf-Funktionalität und führt keinerlei Netzwerkkommunikation durch.
 
 Verweist diese Erklärung ohne weitere Spezifikation auf „TiefPrompt", so gilt die jeweilige Aussage für beide Builds. Gilt eine Aussage nur für einen der Builds, so wird dieser ausdrücklich genannt.
 
@@ -36,7 +38,7 @@ Kontakt: admin@lukechriswalker.at
 
 Die vollständigen Geschäftsdaten (Impressum) sind unter https://lukechriswalker.at abrufbar.
 
-Für sämtliche datenschutzbezogenen Anfragen — einschließlich der Geltendmachung von Rechten nach der DSGVO oder anderen anwendbaren Rechtsvorschriften — ist die oben genannte E-Mail-Adresse die zuständige Kontaktstelle.
+Für sämtliche datenschutzbezogenen Anfragen --- einschließlich der Geltendmachung von Rechten nach der DSGVO oder anderen anwendbaren Rechtsvorschriften --- ist die oben genannte E-Mail-Adresse die zuständige Kontaktstelle.
 
 ## 3. Anwendungsbereich dieser Erklärung
 
@@ -77,7 +79,7 @@ TiefPrompt speichert ausschließlich auf Ihrem Gerät folgende Daten:
 - von Ihnen konfigurierte Profile und Tastenbelegungen
 - im Freemium-Build: einen lokalen Eintrag über Ihre In-App-Kauf-Berechtigung (siehe Abschnitt 7)
 
-Diese Daten werden über die standardmäßigen Anwendungsspeichermechanismen Ihres Betriebssystems abgelegt. Sie sind ausschließlich für TiefPrompt sowie — entsprechend den Zugriffskontrollen Ihres Betriebssystems — für Sie zugänglich. Die App übermittelt diese Daten nicht. Sie können sämtliche lokal gespeicherten Daten entfernen, indem Sie TiefPrompt deinstallieren oder die Anwendungsdatenverwaltung Ihres Betriebssystems verwenden.
+Diese Daten werden über die standardmäßigen Anwendungsspeichermechanismen Ihres Betriebssystems abgelegt. Sie sind ausschließlich für TiefPrompt sowie --- entsprechend den Zugriffskontrollen Ihres Betriebssystems --- für Sie zugänglich. Die App übermittelt diese Daten nicht. Sie können sämtliche lokal gespeicherten Daten entfernen, indem Sie TiefPrompt deinstallieren oder die Anwendungsdatenverwaltung Ihres Betriebssystems verwenden.
 
 ## 6. Von der App angeforderte Berechtigungen
 
@@ -160,7 +162,7 @@ Bei der Validierung von In-App-Kauf-Belegen im Freemium-Build werden die kryptog
 
 ## 14. Änderungen dieser Datenschutzerklärung
 
-Der Entwickler kann diese Erklärung aktualisieren, um Änderungen an der Anwendung, am anwendbaren Recht oder am Geschäftsbetrieb Rechnung zu tragen. Bei wesentlichen Änderungen — insbesondere wenn optionale serverbasierte Funktionen (etwa Synchronisation oder Fernsteuerung) eingeführt werden — wird Ihnen die aktualisierte Erklärung in der App vorgelegt; vor der Anwendung jeder neuen Verarbeitungstätigkeit auf Sie wird Ihre ausdrückliche Zustimmung eingeholt. Verweigern Sie die Zustimmung, so steht Ihnen die neue Funktion schlicht nicht zur Verfügung; die bestehende offline-Funktionalität von TiefPrompt bleibt wie in dieser Erklärung beschrieben weiterhin uneingeschränkt nutzbar.
+Der Entwickler kann diese Erklärung aktualisieren, um Änderungen an der Anwendung, am anwendbaren Recht oder am Geschäftsbetrieb Rechnung zu tragen. Bei wesentlichen Änderungen --- insbesondere wenn optionale serverbasierte Funktionen (etwa Synchronisation oder Fernsteuerung) eingeführt werden --- wird Ihnen die aktualisierte Erklärung in der App vorgelegt; vor der Anwendung jeder neuen Verarbeitungstätigkeit auf Sie wird Ihre ausdrückliche Zustimmung eingeholt. Verweigern Sie die Zustimmung, so steht Ihnen die neue Funktion schlicht nicht zur Verfügung; die bestehende offline-Funktionalität von TiefPrompt bleibt wie in dieser Erklärung beschrieben weiterhin uneingeschränkt nutzbar.
 
 Nicht-wesentliche Aktualisierungen (etwa Klarstellungen, Korrekturen oder Änderungen der Kontaktdaten) werden durch Aktualisierung des Datums und der Versionsnummer am Beginn dieses Dokuments kenntlich gemacht. Die maßgebliche aktuelle Fassung ist stets jene, die unter [https://tiefprompt.com/policies/privacy/de](https://tiefprompt.com/policies/privacy/de) veröffentlicht ist.
 

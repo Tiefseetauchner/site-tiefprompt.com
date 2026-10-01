@@ -11,7 +11,9 @@ description: Privacy policy for TiefPrompt.
 
 ## Summary
 
-TiefPrompt is a teleprompter application. It does not collect, transmit, or store any personal data on any server operated by the developer. Everything you put into TiefPrompt — scripts, settings, profiles, keybindings — stays on your device. The developer has no access to it, cannot read it, and cannot recover it.
+TiefPrompt is a teleprompter application. It does not collect, transmit, or store any personal data on any server operated by the developer. Everything you put into TiefPrompt --- scripts, settings, profiles, keybindings --- stays on your device. The developer has no access to it, cannot read it, and cannot recover it.
+
+This privacy policy only covers official builds and artifacts of TiefPrompt published by Lena Tauchner (also Tiefseetauchner). Any other builds or artifacts, such as forks, modified builds and rebranded derivatives, are not covered by this privacy policy, regardless of the channel through which they are distributed and regardless of whether they link to this policy.
 
 The only network communication performed by TiefPrompt is in-app purchase validation in the Freemium build, which is handled by Apple or Google respectively (see Section 6). The FOSS build performs no network communication at all.
 
@@ -21,8 +23,8 @@ This policy describes the current version of TiefPrompt. Future versions may int
 
 This policy distinguishes between two builds of TiefPrompt:
 
-- **Freemium build** — the build distributed exclusively through the Apple App Store (iOS and macOS) and the Google Play Store (Android). This build contains in-app purchase functionality and performs network communication for in-app purchase validation only, on your device.
-- **FOSS build** — the free and open-source build distributed through F-Droid (Android), https://lukechriswalker.at, and GitHub Releases (Windows, Linux, macOS, Android). This build contains no in-app purchase functionality and performs no network communication of any kind.
+- **Freemium build** --- the build distributed exclusively through the Apple App Store (iOS and macOS) and the Google Play Store (Android). This build contains in-app purchase functionality and performs network communication for in-app purchase validation only, on your device.
+- **FOSS build** --- the free and open-source build distributed through F-Droid (Android), https://lukechriswalker.at, and GitHub Releases (Windows, Linux, macOS, Android). This build contains no in-app purchase functionality and performs no network communication of any kind.
 
 Where this policy refers to "TiefPrompt" without qualification, the statement applies to both builds. Where a statement applies to only one build, that build is named explicitly.
 
@@ -36,7 +38,7 @@ Contact: admin@lukechriswalker.at
 
 Full business details (Impressum) are available at https://lukechriswalker.at.
 
-For any privacy-related inquiries — including any rights you wish to exercise under the GDPR or other applicable law — the above email address is the correct point of contact.
+For any privacy-related inquiries --- including any rights you wish to exercise under the GDPR or other applicable law --- the above email address is the correct point of contact.
 
 ## 3. What this policy covers
 
@@ -160,7 +162,7 @@ When in-app purchase receipts are validated in the Freemium build, the cryptogra
 
 ## 14. Changes to this policy
 
-The developer may update this policy to reflect changes in the application, in applicable law, or in business operations. When material changes are made — in particular, if and when optional server-based features (such as synchronization or remote control) are introduced — you will be presented with the updated policy in-app and asked to provide explicit consent before any new processing activity applies to you. If you do not consent, the new feature will simply not be available to you, and the existing offline functionality of TiefPrompt will continue to work as described in this policy.
+The developer may update this policy to reflect changes in the application, in applicable law, or in business operations. When material changes are made --- in particular, if and when optional server-based features (such as synchronization or remote control) are introduced --- you will be presented with the updated policy in-app and asked to provide explicit consent before any new processing activity applies to you. If you do not consent, the new feature will simply not be available to you, and the existing offline functionality of TiefPrompt will continue to work as described in this policy.
 
 Non-material updates (such as clarifications, corrections, or contact-detail changes) will be reflected by updating the effective date and version at the top of this document. The authoritative current version is always the one published at [https://tiefprompt.com/policies/privacy/en](https://tiefprompt.com/policies/privacy/en).
 
