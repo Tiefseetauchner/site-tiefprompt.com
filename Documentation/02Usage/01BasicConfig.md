@@ -65,6 +65,10 @@ In addition to the theme, there is also a primary color switch that allows you t
 
 This primary color change does not however affect the prompter directly; those are separate, different settings.
 
+If running Windows, MacOS, Linux or Android, you can also use the system color scheme --- simply enable "Use System Colors". Note that this will disable the application primary color selection.
+
+![Enable System Color Scheming](../resources/main_settings_screen/UseSystemColors.webp)
+
 ## Prompter Screen
 
 Being the most prominent screen of the application, the actual scrolling text screen deserves its own part at {{ autolink: '02Usage/02PrompterScreen.md' }}. But below is a sneak peek of what could be your prompter screen after configuring it.

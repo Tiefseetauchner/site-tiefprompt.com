@@ -70,3 +70,9 @@ The toggle "Show Current Chapter" controls whether the current chapter is displa
 When the current chapter is displayed, it will be shown in a separate line above the scrolling text, and will be updated as the text scrolls. The chapter is determined by the first heading in the Markdown text that has been scrolled by in the prompter.
 
 ![Example of the current chapter being displayed in the prompter](../resources/prompter_screen/MarkdownAndChapter.webp){.w-100}
+
+## RTL Rendering
+
+TiefPrompt allows forcing either RTL or LTR text rendering in the prompter. Per default, text is rendered in accordance with standard BIDI algorithms, however, that can be changed in the display settings.
+
+![Rendering Direction selection](../resources/text_settings_screen/TextDirection.webp)

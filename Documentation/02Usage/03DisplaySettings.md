@@ -78,3 +78,4 @@ Prompter Background Color sets the color used behind the scrolling text, indepen
 Prompter Text Color sets the color of the scrolling text and the affordances of the app themselves.
 
 ![Prompter Text Color picker](../resources/display_settings_screen/PrompterTextColor.webp){.w-100}
+
