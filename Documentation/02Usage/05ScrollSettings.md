@@ -39,6 +39,6 @@ The audio device used can be selected from the dropdown menu.
 
 You may test the voice activation by enabling the Preview Voice Activation option.
 
-![Preview Voice Activation toggle](../resources/scroll_settings_screen/PreviewVoiceActivation.webp){.w-33}
+![Preview Voice Activation toggle](../resources/scroll_settings_screen/PreviewVoiceActivation.webp){.w-100}
 
 Learn more at {{ autolink: '03Features/07VoiceActivation.md' }}.

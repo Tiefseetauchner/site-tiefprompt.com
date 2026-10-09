@@ -31,6 +31,19 @@
   }
 }
 
+.callout-error {
+  @include callout($red);
+
+  &::before {
+    content: "\26A0";
+    color: color.mix(black, $red, 20%);
+
+    [data-bs-theme="dark"] & {
+      color: color.mix(white, $red, 40%);
+    }
+  }
+}
+
 .callout-warn {
   @include callout($coral);
 

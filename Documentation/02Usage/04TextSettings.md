@@ -63,6 +63,10 @@ This is not a full Markdown renderer, but it does support the most common format
 
 ## Current Chapter Display
 
+::: callout-error
+TODO: Mention chapter jump here
+:::
+
 The toggle "Show Current Chapter" controls whether the current chapter is displayed in the prompter. This can only be enabled if Markdown is enabled. The default is off.
 
 ![The "Show Current Chapter" toggle](../resources/text_settings_screen/ShowCurrentChapter.webp){.w-33}
