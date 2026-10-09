@@ -7,7 +7,7 @@ description: "An overview of TiefPrompt's main teleprompter screen and its contr
 
 {{ anchor: '02Usage/02PrompterScreen.md' }}
 
-The Prompter Screen shows the scrolling text. How that text looks and moves is governed by the settings covered in {{ autolink: '02Usage/03DisplaySettings.md' }} and {{ autolink: '02Usage/04TextSettings.md' }}, but the top bar, bottom bar and their controls stay the same regardless of configuration.
+The Prompter Screen shows the scrolling text. How that text looks and moves is governed by the settings covered in {{ autolink: '02Usage/03DisplaySettings.md' }}, {{ autolink: '02Usage/04TextSettings.md' }} and {{ autolink: '02Usage/05ScrollSettings.md' }}, but the top bar, bottom bar and their controls stay the same regardless of configuration.
 
 ![The primary prompter screen, configured with the various tools at hand](../resources/prompter_screen/PrompterScreen.webp){.w-100}
 
@@ -33,4 +33,4 @@ The Display Settings and Text Settings icons each toggle an overlay on top of th
 
 ![The prompter screen with both the Display Settings and Text Settings overlays open](../resources/prompter_screen/PrompterScreenOverlays.webp){.w-100}
 
-Each control in these overlays is covered in {{ autolink: '02Usage/03DisplaySettings.md' }} and {{ autolink: '02Usage/04TextSettings.md' }}.
+Each control in these overlays is covered in {{ autolink: '02Usage/03DisplaySettings.md' }}, {{ autolink: '02Usage/04TextSettings.md' }} and {{ autolink: '02Usage/05ScrollSettings.md' }}.

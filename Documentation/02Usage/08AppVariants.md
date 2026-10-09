@@ -5,7 +5,7 @@ description: "The TiefPrompt app variants and their differences"
 
 # App Variants
 
-{{ anchor: '02Usage/07AppVariants.md' }}
+{{ anchor: '02Usage/08AppVariants.md' }}
 
 TiefPrompt is available in multiple variants, each with its own set of features and capabilities. The main variants are:
 

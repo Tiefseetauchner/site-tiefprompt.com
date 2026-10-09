@@ -5,7 +5,7 @@ description: "Save, load and delete scripts in TiefPrompt"
 
 # Saved Scripts
 
-{{ anchor: '02Usage/08SavedScripts.md' }}
+{{ anchor: '02Usage/09SavedScripts.md' }}
 
 Saving scripts is an obvious feature, until it isn't so obvious anymore.
 
@@ -27,7 +27,7 @@ When a script is no longer needed, it can be deleted by pressing the trashcan ic
 
 The Select Scripts screen also includes a button up top to import a script from a file. You will be prompted by your operating system to select a file, and a new script entry will be created upon completion of the import, with the name of the file as the title. The creation date is the date of import.
 
-![Import Script button](../resources/select_script_screen/ImportScript.webp){.w-50}
+![Import Script button](../resources/select_script_screen/ImportScript.webp){.w-33}
 
 Persisting (saving) a script also persists the last scrolled position of the script. This means that when you load a script, it will be scrolled to the last position it was at when you last closed the prompter. This is useful for continuing a script from where you left off.
 

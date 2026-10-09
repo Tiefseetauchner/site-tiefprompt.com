@@ -7,11 +7,11 @@ description: "How settings profiles work under the hood: scope, naming, and impo
 
 {{ anchor: '03Features/02SavedSettings.md' }}
 
-For instructions on where to click, see {{ autolink: '02Usage/06SavedSettings.md' }}. This article instead covers what actually happens when you save, apply, import or export a settings profile ("restore point").
+For instructions on where to click, see {{ autolink: '02Usage/07SavedSettings.md' }}. This article instead covers what actually happens when you save, apply, import or export a settings profile ("restore point").
 
 ## What's in a Profile
 
-A saved profile is a full snapshot of the app's settings: theme mode, app accent color, prompter background/text colors, and the entire {{ autolink: '02Usage/03DisplaySettings.md' }} / {{ autolink: '02Usage/04TextSettings.md' }} configuration -- plus a private copy of your current {{ autolink: '02Usage/05Keybindings.md' }}, cloned into its own record at save time rather than linked to your live bindings. Saving a profile captures all of this at once -- there's no way to save, say, only your Text Settings.
+A saved profile is a full snapshot of the app's settings: theme mode, app accent color, prompter background/text colors, and the entire {{ autolink: '02Usage/03DisplaySettings.md' }} / {{ autolink: '02Usage/04TextSettings.md' }} / {{ autolink: '02Usage/04ScrollSettings.md' }} configuration --- plus a private copy of your current {{ autolink: '02Usage/06Keybindings.md' }}, cloned into its own record at save time rather than linked to your live bindings. Saving a profile captures all of this at once -- there's no way to save, say, only your Text Settings.
 
 Deliberately excluded: anything script-related. No script content, script id, or scroll position is ever part of a profile.
 

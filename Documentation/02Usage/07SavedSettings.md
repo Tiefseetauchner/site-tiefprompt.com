@@ -5,7 +5,7 @@ description: "Save, apply, export, import and delete named TiefPrompt settings p
 
 # Save and Restore Settings
 
-{{ anchor: '02Usage/06SavedSettings.md' }}
+{{ anchor: '02Usage/07SavedSettings.md' }}
 
 As customization is an integral part of TiefPrompt, and we're aware of multiple-user workflows, there is the option to save and restore settings. That is positioned right below the primary color control, giving access to a list of named, saved settings as well as the option to import or export settings files.
 

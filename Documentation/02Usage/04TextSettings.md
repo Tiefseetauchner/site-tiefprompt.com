@@ -57,7 +57,7 @@ Lastly, by pressing the edit icon next to a font variant, you can edit the varia
 
 Markdown rendering can be enabled via the "Enable Markdown" toggle. This will render the text in the prompter as Markdown, allowing for formatting such as bold, italics, headings, and more. The default is off.
 
-![The "Enable Markdown" toggle](../resources/text_settings_screen/EnableMarkdown.webp){.w-50}
+![The "Enable Markdown" toggle](../resources/text_settings_screen/EnableMarkdown.webp){.w-33}
 
 This is not a full Markdown renderer, but it does support the most common formatting options. For more information on what is supported, see {{ autolink: '04Contributing/03Markdown.md' }}.
 
@@ -65,7 +65,7 @@ This is not a full Markdown renderer, but it does support the most common format
 
 The toggle "Show Current Chapter" controls whether the current chapter is displayed in the prompter. This can only be enabled if Markdown is enabled. The default is off.
 
-![The "Show Current Chapter" toggle](../resources/text_settings_screen/ShowCurrentChapter.webp){.w-50}
+![The "Show Current Chapter" toggle](../resources/text_settings_screen/ShowCurrentChapter.webp){.w-33}
 
 When the current chapter is displayed, it will be shown in a separate line above the scrolling text, and will be updated as the text scrolls. The chapter is determined by the first heading in the Markdown text that has been scrolled by in the prompter.
 
