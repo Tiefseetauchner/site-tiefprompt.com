@@ -49,3 +49,5 @@ The default keybindings are as follows:
 - Font Size Down: `Ctrl + -`, `Ctrl + Numpad -`
 - Open Settings: `Ctrl + ,`
 - Save Settings from Prompter: `Ctrl + S`
+- Jump to Previous Chapter: `,`
+- Jump to Next Chapter: `.`

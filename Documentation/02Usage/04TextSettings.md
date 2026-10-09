@@ -63,10 +63,6 @@ This is not a full Markdown renderer, but it does support the most common format
 
 ## Current Chapter Display
 
-::: callout-error
-TODO: Mention chapter jump here
-:::
-
 The toggle "Show Current Chapter" controls whether the current chapter is displayed in the prompter. This can only be enabled if Markdown is enabled. The default is off.
 
 ![The "Show Current Chapter" toggle](../resources/text_settings_screen/ShowCurrentChapter.webp){.w-33}
@@ -74,6 +70,10 @@ The toggle "Show Current Chapter" controls whether the current chapter is displa
 When the current chapter is displayed, it will be shown in a separate line above the scrolling text, and will be updated as the text scrolls. The chapter is determined by the first heading in the Markdown text that has been scrolled by in the prompter.
 
 ![Example of the current chapter being displayed in the prompter](../resources/prompter_screen/MarkdownAndChapter.webp){.w-100}
+
+When toggled, the current chapter heading doubles as a clickable element to jump to the previous most chapter. You can thus press the heading and jump to the current chapters start. 
+
+Additionally, keybindings are available to jump to the previous/next chapter. See {{ autolink: '02Usage/06Keybindings.md' }}
 
 ## RTL Rendering
 
