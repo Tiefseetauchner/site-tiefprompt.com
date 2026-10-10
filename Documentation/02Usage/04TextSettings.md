@@ -59,7 +59,7 @@ Markdown rendering can be enabled via the "Enable Markdown" toggle. This will re
 
 ![The "Enable Markdown" toggle](../resources/text_settings_screen/EnableMarkdown.webp){.w-33}
 
-This is not a full Markdown renderer, but it does support the most common formatting options. For more information on what is supported, see {{ autolink: '04Contributing/03Markdown.md' }}.
+This is not a full Markdown renderer, but it does support the most common formatting options. For more information on what is supported, see {{ autolink: '03Features/08Markdown.md' }}.
 
 ## Current Chapter Display
 
